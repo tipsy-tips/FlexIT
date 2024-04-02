@@ -4,10 +4,10 @@
 @use "../components/" as *;
 @use "../vendor/" as *;
 
-.cta {
+.banner {
   &__wrapper {
     h1 {
-      color: var(--primary);
+      color: aqua;
     }
   }
 }
