@@ -3,3 +3,13 @@
 @use "../abstract/" as *;
 @use "../components/" as *;
 @use "../vendor/" as *;
+
+header {
+  .container {
+    &__wrapper {
+      h1 {
+        color: red;
+      }
+    }
+  }
+}
