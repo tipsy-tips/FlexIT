@@ -505,4 +505,12 @@ p {
 
 .wrap-nowrap {
   flex-wrap: nowrap;
+}
+
+footer {
+  background-color: blue;
+}
+footer__logo {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=main.min.css.map */
