@@ -1,12 +1,17 @@
 @use "../abstract/" as *;
 @use "../base/" as *;
 
-header {
-  .container {
-    &__wrapper {
-      h1 {
-        color: red;
-      }
-    }
+.header {
+  &__wrapper {
+    padding: 0 1rem;
+    display: flex;
+    background: center;
+    justify-content: space-between;
+  }
+  .nav {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(light);
   }
 }
