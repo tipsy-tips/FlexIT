@@ -4,12 +4,10 @@
 @use "../components/" as *;
 @use "../vendor/" as *;
 
-header {
-  .container {
-    &__wrapper {
-      h1 {
-        color: red;
-      }
+.cta {
+  &__wrapper {
+    h1 {
+      color: var(--primary);
     }
   }
 }

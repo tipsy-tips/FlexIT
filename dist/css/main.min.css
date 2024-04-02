@@ -509,4 +509,8 @@ p {
 
 header .container__wrapper h1 {
   color: red;
+}
+
+.cta__wrapper h1 {
+  color: var(--primary);
 }/*# sourceMappingURL=main.min.css.map */
