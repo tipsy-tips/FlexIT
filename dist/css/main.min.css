@@ -505,4 +505,8 @@ p {
 
 .wrap-nowrap {
   flex-wrap: nowrap;
+}
+
+.banner__wrapper h1 {
+  color: aqua;
 }/*# sourceMappingURL=main.min.css.map */
