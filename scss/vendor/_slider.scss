@@ -3,12 +3,18 @@
 
 .tns-controls {
   color: $clr-dark;
-  @include flex(space-between, center);
-  margin-bottom: 3rem;
+  width: 100%;
+  @include flex(center, center);
+  margin: 5rem 0;
   button {
-    color: $clr-dark;
+    margin: 0 3rem;
+    color: $clr-secondary;
     background-color: transparent;
     border: none;
     font-size: 3rem;
+    transition: 0.5s ease;
+    &:hover {
+      color: $clr-light;
+    }
   }
 }

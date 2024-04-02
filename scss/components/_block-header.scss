@@ -3,13 +3,9 @@
 .block__header {
   padding: 1rem 0;
   margin-bottom: 2rem;
-  @include flex(space-between, center);
-  border-top: 1px solid $clr-dark;
-  border-bottom: 1px solid $clr-dark;
+  text-align: center;
   h2 {
-    margin-bottom: 0;
-  }
-  a {
-    opacity: 0.5;
+    font-size: clamp(2.5rem, 6vw, 3rem);
+    color: $clr-secondary;
   }
 }
