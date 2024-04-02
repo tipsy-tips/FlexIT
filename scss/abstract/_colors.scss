@@ -2,9 +2,9 @@
   --light: #fff;
   --dark: #000;
 
-  --primary: #433d3c;
-  --secondary: #d9333e;
-  --accent: #f6ad49;
+  --primary: #09aff4;
+  --secondary: #060922;
+  --accent: #062241;
 }
 
 $clr-light: var(--light);
@@ -14,6 +14,5 @@ $clr-secondary: var(--secondary);
 $clr-accent: var(--accent);
 
 $sm: "42rem";
-$md: "92rem";
-$lg: "144rem";
-$xl: "180rem";
+$md: "72rem";
+$lg: "132rem";
