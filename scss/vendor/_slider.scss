@@ -1,0 +1,14 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+.tns-controls {
+  color: $clr-dark;
+  @include flex(space-between, center);
+  margin-bottom: 3rem;
+  button {
+    color: $clr-dark;
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+  }
+}
