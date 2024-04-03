@@ -2,16 +2,287 @@
 @use "../base/" as *;
 
 .header {
-  &__wrapper {
-    padding: 0 1rem;
-    display: flex;
-    background: center;
-    justify-content: space-between;
+  background-color: $clr-primary;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  border-bottom: 1px solid transparent;
+
+  @include mediaQuery {
+    background-color: transparent;
   }
-  .nav {
-    position: absolute;
+
+  &__wrapper {
+    padding: 2rem 0rem;
+    display: flex;
+    justify-content: space-between;
+
+    nav {
+      position: absolute;
+      top: 75px;
+      left: -100%;
+      z-index: 10;
+      height: 100vh;
+      width: 0%;
+      background-color: $clr-primary;
+      transition: all;
+      transition-duration: 0.5s;
+      &.open {
+        left: 0;
+        width: 75%;
+      }
+      .nav-links {
+        color: $clr-light;
+        padding-top: 5rem;
+        margin-left: 1rem;
+        li {
+          padding-left: 1rem;
+          cursor: pointer;
+        }
+        a {
+          color: $clr-light;
+        }
+        input {
+          display: none;
+        }
+        input,
+        .submenu {
+          max-height: 0;
+          transition: max-height 0.3s ease-out;
+          overflow: hidden;
+        }
+        input:checked ~ .submenu {
+          max-height: 50px;
+          transition: max-height, 0.3s ease-in;
+        }
+        label {
+          padding: 2.5rem 2.5rem 2.5rem 0rem;
+          display: block;
+          position: relative;
+          cursor: pointer;
+
+          &:hover {
+            &::before {
+              scale: 1;
+            }
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            width: 6px;
+            left: -12px;
+            top: 35px;
+            aspect-ratio: 1/1;
+            background-color: $clr-light;
+            scale: 0;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+          }
+
+          &.active {
+            &::before {
+              scale: 1;
+            }
+          }
+        }
+
+        .dropdown-parent {
+          .nav-links-dropdown {
+            position: relative;
+            left: 0px;
+            display: none;
+            padding: 1.25rem;
+            padding: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .header-search-box {
+    position: fixed;
+    top: 0;
     width: 100%;
-    height: 100%;
-    background: var(light);
+    height: 0;
+    background-color: rgba(#062241, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out 0s;
+    z-index: 1200;
+
+    &.show {
+      height: 100%;
+      visibility: visible;
+      opacity: 1;
+
+      .search-form {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .close-search {
+      position: absolute;
+      top: 30%;
+      right: 10%;
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:before,
+      &::after {
+        content: "";
+        height: 2px;
+        width: 40px;
+        background-color: $clr-light;
+        display: block;
+        transform-origin: center;
+      }
+
+      &:before {
+        transform: rotate(45deg) translateX(2px);
+      }
+
+      &:after {
+        transform: rotate(-45deg) translateX(1px);
+      }
+    }
+
+    .search-form {
+      position: relative;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(5rem);
+      transition-delay: 0.25s;
+      width: 80%;
+
+      .search-lbl {
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
+        position: absolute;
+      }
+
+      .search-input {
+        border: none;
+        border-bottom: 2px solid $clr-primary;
+        font-size: 2rem;
+        outline: none;
+        color: $clr-light;
+        background-color: transparent;
+        width: 100%;
+        padding-bottom: 5px;
+      }
+
+      .search-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 30%;
+        right: 5%;
+        transform: translateY(-50%);
+        outline: none;
+        border: none;
+        background: transparent;
+        color: $clr-primary;
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .nav__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    .burger__menu {
+      @include mediaQuery {
+        display: none;
+      }
+      cursor: pointer;
+      position: relative;
+      width: 30px;
+      height: 20px;
+      span {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: $clr-light;
+        opacity: 100;
+        left: 0;
+        top: 0;
+        &:nth-child(1) {
+          top: 0px;
+          opacity: 1;
+          transition-property: all;
+          transition-duration: 600ms;
+        }
+        &:nth-child(2) {
+          top: 8px;
+          opacity: 1;
+          transition-property: all;
+          transition-duration: 600ms;
+        }
+        &:nth-child(3) {
+          top: 16px;
+          opacity: 1;
+          transition-property: all;
+          transition-duration: 600ms;
+        }
+      }
+      &.open {
+        span {
+          &:nth-child(1) {
+            top: 0px;
+            transform: rotate(225deg) translateY(-9px);
+            transition: all;
+            transition-duration: 600ms;
+          }
+          &:nth-child(2) {
+            top: 0px;
+            opacity: 0;
+            transition: all;
+            transition-duration: 600ms;
+          }
+          &:nth-child(3) {
+            top: 13px;
+            transform: rotate(-45deg) translateY(-9px);
+            transition: all;
+            transition-duration: 600ms;
+          }
+        }
+      }
+    }
+    .search__btn {
+      cursor: pointer;
+      i {
+        color: $clr-light;
+        font-size: 2.5rem;
+      }
+    }
+    .mode__btn {
+      cursor: pointer;
+      i {
+        height: 40px;
+        width: 40px;
+        color: $clr-dark;
+        background-color: $clr-light;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 2rem;
+      }
+    }
   }
 }

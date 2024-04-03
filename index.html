@@ -13,71 +13,115 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-
   </head>
   <body>
-
     <!-- HEADER -->
 
-    <header id="header">
-      <div class="container">
-        <div
-          class="header__wrapper">
-          <div class="logo">
-            <a href="#"><img src="./img/logo-fbs.png"/></a>
+    <header class="header">
+      <div class="header-search-box">
+        <div class="close-search"></div>
+        <form
+          class="nav-search search-form"
+          role="search"
+          method="get"
+          action="#"
+        >
+          <div class="search-wrapper">
+            <label class="search-lbl">Search for:</label>
+            <input
+              class="search-input"
+              type="search"
+              placeholder="Search..."
+              name="searchInput"
+              autofocus="autofocus"
+            />
+            <button class="search-btn" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
           </div>
-          <nav>
-              <ul class="nav-links">
-                <li>
-                  <a href="./home.html">Home</a>
-                </li>
-                <li>
-                  <a href="./about.html">About</a>
-                </li>
-                <li class="dropdown-parent">
-                  <a href="#dropdown">Services</a>
-                  <ul class="nav-links-dropdown">
-                    <li>
-                      <a href="#services">Web Solutions</a>
-                    </li>
-                    <li>
-                      <a href="#services"
-                        >Virtual Assistant Solutions</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#services"
-                        >Accounting Solutions</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#services"
-                        >Learning Center Solutions</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">Career</a>
-                </li>
-                <li>
-                  <a href="#">Activities</a>
-                </li>
-                <li>
-                  <a href="#">Contact</a>
-                </li>
-                <li>
-                  <a href="#">Payment</a>
-                </li>
-              </ul>
+        </form>
+      </div>
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="logo">
+            <a href="#"><img src="./images/logo-light.png" /></a>
+          </div>
+          <nav class="">
+            <ul class="nav-links">
+              <li class="dropdown-parent">
+                <input id="drop1" type="checkbox" name="menu" />
+                <label class="active" for="drop1"
+                  >Home <i class="fa-solid fa-plus"></i
+                ></label>
+                <ul class="submenu">
+                  <li><a href="#">Item 1</a></li>
+                  <li><a href="#">Item 2</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-parent">
+                <input id="drop0" type="checkbox" name="menu" />
+                <label for="drop0">About Us</label>
+                <ul class="submenu"></ul>
+              </li>
 
+              <li class="dropdown-parent">
+                <input id="drop3" type="checkbox" name="menu" />
+                <label for="drop3"
+                  >Services <i class="fa-solid fa-plus"></i
+                ></label>
+                <ul class="submenu">
+                  <li><a href="#">Item 1</a></li>
+                  <li><a href="#">Item 2</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-parent">
+                <input id="drop4" type="checkbox" name="menu" />
+                <label for="drop4"
+                  >Portfolio <i class="fa-solid fa-plus"></i
+                ></label>
+                <ul class="submenu">
+                  <li><a href="#">Item 1</a></li>
+                  <li><a href="#">Item 2</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-parent">
+                <input id="drop5" type="checkbox" name="menu" />
+                <label for="drop5">Blog <i class="fa-solid fa-plus"></i></label>
+                <ul class="submenu">
+                  <li><a href="#">Item 1</a></li>
+                  <li><a href="#">Item 2</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-parent">
+                <input id="drop6" type="checkbox" name="menu" />
+                <label for="drop6"
+                  >Pages <i class="fa-solid fa-plus"></i
+                ></label>
+                <ul class="submenu">
+                  <li><a href="#">Item 1</a></li>
+                  <li><a href="#">Item 2</a></li>
+                </ul>
+              </li>
+              <li>
+                <label><a href="">Contact Us</a></label>
+              </li>
+            </ul>
           </nav>
-          <div
-            class="burger__menu">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+
+          <div class="nav__controls">
+            <div class="burger__menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="search__btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="mode__btn">
+              <i class="theme far fa-sun" id="toggleMode"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -85,25 +129,60 @@
 
     <!-- BODY -->
 
-    <section class="cta">
-      <div class="container">
-        <div class="cta__wrapper">
-          <h1>HELLO THIS IS CTA!</h1>
-          
-    <section class="banner">
-      <div class="container">
-        <div class="banner__wrapper">
-          <h1>Hello!!!!</h1>
-        </div>
-      </div>
-    </section>
-
     <!-- FOOTER -->
 
-    <footer>
+    <footer></footer>
 
-    </footer>
+    <script>
+      const searchBTN = document.querySelector(".search__btn");
+      const searchContainer = document.querySelector(".header-search-box");
+      const close = document.querySelector(".close-search");
+      searchBTN.addEventListener("click", () => {
+        searchBTN.classList.toggle("show");
+        searchContainer.classList.toggle("show");
+      });
+      close.addEventListener("click", () => {
+        searchBTN.classList.remove("show");
+        searchContainer.classList.remove("show");
+      });
 
+      const burgerbtn = document.querySelector(".burger__menu");
+      const headerA = document.querySelector("nav");
+      burgerbtn.addEventListener("click", () => {
+        burgerbtn.classList.toggle("open");
+        headerA.classList.toggle("open");
+      });
+    </script>
+
+    <script>
+      const toggleMenu = document.querySelector("#toggleMode");
+      const menu = document.querySelector("#menu");
+      const body = document.querySelector("body");
+      const icon = document.querySelector(".far");
+
+      toggleMenu.addEventListener("click", () => {
+        menu.classList.toggle("open");
+        body.classList.toggle("open");
+      });
+
+      const btnTheme = document.querySelector(".theme");
+      const root = document.querySelector(":root");
+
+      btnTheme.addEventListener("click", () => {
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+          root.style.setProperty("--light", "#fff");
+          root.style.setProperty("--dark", "#1f1f1f");
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        } else {
+          body.classList.add("dark");
+          root.style.setProperty("--light", "#1f1f1f");
+          root.style.setProperty("--dark", "#fff");
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+        }
+      });
     </script>
   </body>
 </html>

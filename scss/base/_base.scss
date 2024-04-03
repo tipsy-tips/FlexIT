@@ -9,6 +9,18 @@ html {
   font-size: 10px;
 }
 
+body.dark * {
+  transition: ease-in-out 0.5s;
+}
+
+body.light * {
+  transition: ease-in-out 0.5s;
+}
+
+body * {
+  transition: ease-in-out 0.5s;
+}
+
 body {
   font-family: "Main", arial, sans-serif;
   color: rgba($clr-dark, 0.7);
