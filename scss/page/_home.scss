@@ -4,10 +4,10 @@
 @use "../components/" as *;
 @use "../vendor/" as *;
 
-.banner {
-  &__wrapper {
-    h1 {
-      color: aqua;
-    }
+.sample__section {
+  height: 500px;
+  margin-top: 36rem;
+  h1 {
+    color: #fff;
   }
 }

@@ -11,7 +11,7 @@
   border-bottom: 1px solid transparent;
 
   @include mediaQuery {
-    background-color: transparent;
+    background-color: $clr-primary;
   }
 
   &__wrapper {
@@ -20,6 +20,15 @@
     justify-content: space-between;
 
     nav {
+      @include mediaQuery {
+        position: unset;
+        top: unset;
+        left: unset;
+        z-index: unset;
+        height: unset;
+        width: unset;
+      }
+
       position: absolute;
       top: 75px;
       left: -100%;
@@ -34,6 +43,11 @@
         width: 75%;
       }
       .nav-links {
+        @include mediaQuery {
+          padding-top: unset;
+          display: flex;
+          gap: 1.7rem;
+        }
         color: $clr-light;
         padding-top: 5rem;
         margin-left: 1rem;
@@ -47,17 +61,22 @@
         input {
           display: none;
         }
-        input,
+        // INACTIVE SUBMENU
         .submenu {
           max-height: 0;
           transition: max-height 0.3s ease-out;
           overflow: hidden;
         }
+
+        // OPEN SUBMENU
         input:checked ~ .submenu {
           max-height: 50px;
           transition: max-height, 0.3s ease-in;
         }
         label {
+          @include mediaQuery {
+            padding: 1rem 1rem 1rem 0rem;
+          }
           padding: 2.5rem 2.5rem 2.5rem 0rem;
           display: block;
           position: relative;
@@ -69,6 +88,9 @@
             }
           }
           &::before {
+            @include mediaQuery {
+              top: 19px;
+            }
             content: "";
             position: absolute;
             width: 6px;
