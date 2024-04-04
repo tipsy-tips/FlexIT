@@ -47,7 +47,7 @@
         <div class="header__wrapper">
           <div class="logo">
             <a href="#"
-              ><img class="light-logo" src="./images/logo-light.png"
+              ><img id="logo" class="light-logo" src="./images/logo-light.png"
             /></a>
           </div>
           <nav class="">
@@ -618,6 +618,7 @@
       const body = document.querySelector("body");
 
       const icon = document.querySelector(".far");
+      const logo = document.querySelector("#logo");
 
       toggleMenu.addEventListener("click", () => {
         menu.classList.toggle("open");
@@ -635,6 +636,7 @@
           root.style.setProperty("--secondary", "#060922");
           icon.classList.remove("fa-moon");
           icon.classList.add("fa-sun");
+          logo.src = "./images/logo-light.png";
         } else {
           body.classList.add("dark");
           root.style.setProperty("--light", "#1f1f1f");
@@ -642,6 +644,7 @@
           root.style.setProperty("--secondary", "#fff");
           icon.classList.remove("fa-sun");
           icon.classList.add("fa-moon");
+          logo.src = "./images/logo-dark.png";
         }
       });
     </script>
