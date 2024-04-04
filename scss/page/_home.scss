@@ -4,6 +4,216 @@
 @use "../components/" as *;
 @use "../vendor/" as *;
 
+// BANNER
+
+@keyframes anim-pulses {
+  0% {
+    transform: scale3d(0.9, 0.9, 1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale3d(1.2, 1.2, 1);
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: scale3d(1.4, 1.4, 1);
+    opacity: 0;
+  }
+}
+
+.banner {
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 100%, 100% 0%, 100% 100%, 0 100%);
+    background: rgba(#2e1e76, 0.6);
+    transition: all 0.25s ease-in-out 0s;
+  }
+  height: auto;
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+  .particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+    .particles-js-canvas-el {
+      width: unset;
+    }
+  }
+  .overlay {
+    background-image: url(../../images/pattern-bg-1.jpg);
+    opacity: 0.25;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    transition: all 0.5s ease-in-out 0s;
+    @include mediaQuery {
+      height: 100%;
+    }
+  }
+  @include mediaQuery {
+    padding: 7rem 0rem;
+  }
+  padding: 3rem 0rem;
+  &__wrapper {
+    padding: 10rem 0rem;
+    @include mediaQuery {
+      @include grid(2);
+    }
+    .banner__paragraph {
+      @include flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      .banner--socials {
+        ul {
+          @include flex;
+          gap: 3rem;
+          margin-bottom: 1rem;
+          li {
+            &:hover {
+              background-color: transparent;
+              box-shadow: none;
+              transform: translateY(-5px);
+            }
+            &:hover i {
+              color: $clr-primary;
+            }
+            i {
+              color: $clr-light;
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+      .banner--title {
+        position: relative;
+        h1 {
+          font-size: clamp(1.8rem, 6vw, 5.9rem);
+          text-transform: capitalize;
+          color: $clr-light;
+          .featured-text {
+            position: relative;
+            color: $clr-primary;
+            img {
+              position: absolute;
+              left: 50%;
+              top: 100%;
+              width: calc(100% + 10px);
+              height: calc(100% + 40px);
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+        .stripes {
+          background-image: repeating-linear-gradient(
+            -55deg,
+            transparent 0.9px,
+            $clr-primary 1.25px,
+            $clr-primary 3px,
+            transparent 4px,
+            transparent 8px
+          );
+          border-radius: 50%;
+          position: absolute;
+          width: 150px;
+          height: 150px;
+          opacity: 0.25;
+          z-index: -1;
+          left: 0;
+          top: 35px;
+          transform: translate(-25%, -25%);
+        }
+      }
+      .banner--subtitle {
+        p {
+          font-size: clamp(1.4rem, 10vw, 2.1rem);
+          color: $clr-light;
+        }
+      }
+      .banner--cta {
+        @include flex(flex-start, center);
+        gap: 3rem;
+        .cta--btn {
+          display: inline-block;
+          .play-video-btn {
+            @include flex(center, center);
+            .play-btn {
+              position: relative;
+              border-radius: 50%;
+              padding: 5px;
+              cursor: pointer;
+              background-color: $clr-primary;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 6rem;
+              height: 6rem;
+              transform-origin: center;
+              box-shadow: 1px 1px 10px 5px rgba($clr-secondary, 0.25);
+              transition: all 0.3s ease-in-out 0s;
+              i {
+                color: $clr-light;
+              }
+              &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                border-radius: 50%;
+                background-color: inherit;
+                animation: anim-pulses infinite 2s linear;
+                z-index: -1;
+              }
+              &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                border-radius: 50%;
+                background-color: inherit;
+                animation: anim-pulses infinite 2s linear;
+                animation-delay: 0s;
+                z-index: -1;
+                animation-delay: 0.75s;
+              }
+            }
+          }
+        }
+      }
+    }
+    .banner__img {
+      @include flex(center, center);
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
 // ABOUT US
 .about {
   background-color: $clr-secondary;

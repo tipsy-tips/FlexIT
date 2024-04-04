@@ -19,8 +19,6 @@
   </head>
   <body>
     <!-- HEADER -->
-
-    <!-- HEADER -->
     <header id="header" class="header">
       <div class="header-search-box">
         <div class="close-search"></div>
@@ -48,7 +46,9 @@
       <div class="container">
         <div class="header__wrapper">
           <div class="logo">
-            <a href="#"><img src="./images/logo-light.png" /></a>
+            <a href="#"
+              ><img class="light-logo" src="./images/logo-light.png"
+            /></a>
           </div>
           <nav class="">
             <ul class="nav-links">
@@ -117,7 +117,7 @@
                 </label>
               </li>
               <li>
-                <label><a href="">Contact Us</a></label>
+                <label>Contact Us</label>
               </li>
             </ul>
           </nav>
@@ -140,6 +140,67 @@
         </div>
       </div>
     </header>
+
+    <!-- BANNER -->
+    <section class="banner">
+      <div class="overlay"></div>
+      <div class="particles-js" id="particles-js"></div>
+      <div class="container">
+        <div class="banner__wrapper">
+          <div class="banner__paragraph">
+            <div class="banner--socials">
+              <ul>
+                <li>
+                  <a href=""><i class="fab fa-facebook-f"> </i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-youtube"> </i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-instagram"> </i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-twitter"> </i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="banner--title">
+              <h4 class="block-header">IT SOLUTIONS</h4>
+              <h1>
+                providing the best services & IT
+                <span class="featured-text"
+                  >solutions
+                  <img src="./images/wavy.svg" alt="" />
+                </span>
+              </h1>
+              <span class="stripes"></span>
+            </div>
+            <div class="banner--subtitle">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed
+                architecto dolorum inventore totam adipisci
+              </p>
+            </div>
+            <div class="banner--cta">
+              <div class="btn__outline">
+                <button>Start Now</button>
+              </div>
+              <div class="cta--btn">
+                <a class="video-link" href="https://www.youtube.com">
+                  <div class="play-video-btn">
+                    <div class="play-btn">
+                      <i class="fas fa-play icon"></i>
+                    </div></div
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div data-tilt class="banner__img">
+            <img src="./images/home.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ABOUT US -->
     <section class="about">
@@ -321,8 +382,6 @@
       </div>
     </section>
 
-    <!-- BODY -->
-
     <!-- FOOTER -->
     <footer class="footer">
       <div class="overlay"></div>
@@ -495,6 +554,11 @@
       </a>
     </div>
 
+    <script src="./scss/vendor/vanilla-tilt-min.js"></script>
+
+    <script src="./scss/vendor/particles.min.js"></script>
+    <script src="./scss/vendor/app.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
     <script>
       var slider = tns({
@@ -552,6 +616,7 @@
       const toggleMenu = document.querySelector("#toggleMode");
       const menu = document.querySelector("#menu");
       const body = document.querySelector("body");
+
       const icon = document.querySelector(".far");
 
       toggleMenu.addEventListener("click", () => {
@@ -567,12 +632,14 @@
           body.classList.remove("dark");
           root.style.setProperty("--light", "#fff");
           root.style.setProperty("--dark", "#1f1f1f");
+          root.style.setProperty("--secondary", "#060922");
           icon.classList.remove("fa-moon");
           icon.classList.add("fa-sun");
         } else {
           body.classList.add("dark");
           root.style.setProperty("--light", "#1f1f1f");
           root.style.setProperty("--dark", "#fff");
+          root.style.setProperty("--secondary", "#fff");
           icon.classList.remove("fa-sun");
           icon.classList.add("fa-moon");
         }
