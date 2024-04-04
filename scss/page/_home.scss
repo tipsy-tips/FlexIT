@@ -26,17 +26,12 @@
     margin: auto;
   }
   &__contents{
-    span{
-      font-size:16px;
-      color: $clr-primary;
-      font-weight: 500;
-    }
     h2{
       font-size: clamp(32px, 6vw, 48px);
-      color: #fff;
+      color: $clr-light;
     }
     p{
-      color: #fff;
+      color: $clr-light;
     }
   }
   &__details{
@@ -55,7 +50,7 @@
     margin-bottom: .5rem;
   }
   &__icons {
-    margin-top: 2rem;
+  margin-top: 2rem;
   position: relative;
   display: inline-block;
    width: 68px;
@@ -65,20 +60,20 @@
     transition: background-color 0.3s, transform 0.3s;
 
     i {
-        color: #09aff4; 
+        color: $clr-primary; 
         font-size: 3rem; 
 
         &__icons:hover & {
-            color: #fff;
+            color:$clr-light;
         }
     }
 
     &:hover {
-        background-color: #09aff4; 
+        background-color:$clr-primary; 
         transform: translateY(-5px); 
 
         i {
-            color: #fff; 
+            color: $clr-primary; 
         }
     }
 
@@ -88,7 +83,7 @@
     margin-bottom: 4rem;
     h5{
       font-size: clamp(2rem, 6vw, 2rem);
-      color: #fff;
+      color: $clr-primary;
     }
   }
   &__bottom{
@@ -149,17 +144,12 @@
     margin: auto;
   }
   &__contents{
-    span{
-      font-size:16px;
-      color: $clr-primary;
-      font-weight: 500;
-    }
     h2{
       font-size: clamp(32px, 6vw, 48px);
-      color: #fff;
+      color: $clr-primary;
     }
     p{
-      color: #fff;
+      color: $clr-primary;
     }
   }
   &__info{
@@ -180,7 +170,7 @@
     margin-bottom: 4rem;
     h5{
       font-size: clamp(2rem, 6vw, 2rem);
-      color: #fff;
+      color: $clr-primary;
     }
   }
   &__btn{
@@ -228,12 +218,12 @@
     }
    width: 100%;
    margin-bottom: 2rem;
-    border: 1px solid#09aff4;
-    border-top: 5px solid #09aff4;
+    border: 1px solid$clr-primary;
+    border-top: 5px solid $clr-primary;
     border-radius: 5px;
     padding: 20px;
     @include flex(space-evenly, center);
-    color: #fff;
+    color: $clr-primary;
     flex-direction: column;
 
     i{
@@ -243,11 +233,11 @@
     .counter{
       font-size: 50px;
       font-weight: 600;
-      color: #fff;
+      color: $clr-primary;
     }
     p{
       font-size: 25px;
-      color: #fff;
+      color: $clr-primary;
     }
   }
 }
@@ -263,7 +253,7 @@
  
   h2{
     text-align: center;
-    color: #fff;
+    color: $clr-primary;
     opacity: 0.7;
   }
   &__slider{
