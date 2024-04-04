@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flex IT</title>
     <link rel="stylesheet" href="./dist/css/main.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
@@ -13,17 +16,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
   </head>
   <body>
-<!-- ABOUT US -->
-<section class="about">
-  <div class="container">
-    <div class="about__wrapper">
+    <!-- HEADER -->
 
+<<<<<<< HEAD
       <div class="about__contents">
         <h4 class="block-header">ABOUT US</h4>
         <h2>Trusted By Worldwide<br>Clients Since 1980.</h2>
@@ -57,31 +54,39 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, iste</p>
         </div>
         </div>
-      </div>
-      <div class="about__bottom">
-        <div class="about__btn">
-        <button>Get In Touch</button>
-      </div>
-      <div class="about__imgname">
-      <img src="./images/signature-light.png" alt="">
-      <p>CEO & FOUNDER</p>
-    </div>
-  </div>
-      </div>
-      <div class="about__image">
-        <img src="./images/about us.png" alt="">
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!--WHY CHOOSE US-->
-    <section class="whychoose">
-      <div class="container">
-        <div class="whychoose__wrapper">
-          <div class="whychoose__image">
-            <img src="./images/why choose us.png" alt="">
+=======
+    <!-- HEADER -->
+    <header id="header" class="header">
+      <div class="header-search-box">
+        <div class="close-search"></div>
+        <form
+          class="nav-search search-form"
+          role="search"
+          method="get"
+          action="#"
+        >
+          <div class="search-wrapper">
+            <label class="search-lbl">Search for:</label>
+            <input
+              class="search-input"
+              type="search"
+              placeholder="Search..."
+              name="searchInput"
+              autofocus="autofocus"
+            />
+            <button class="search-btn" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
           </div>
+        </form>
+>>>>>>> 06565328f24c76437e760bb4bd68d36e292ff4ee
+      </div>
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="logo">
+            <a href="#"><img src="./images/logo-light.png" /></a>
+          </div>
+<<<<<<< HEAD
           <div class="whychoose__contents">
             <h4 class="block-header">WHY CHOOSE US</h4>
             <h2>Why Our Customers <br>Choose Working With Us</h2>
@@ -91,110 +96,557 @@
               <div class="whychoose__content">
               <h5>Latest Technologies</h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
+=======
+          <nav class="">
+            <ul class="nav-links">
+              <li class="dropdown-parent">
+                <input id="drop1" type="checkbox" name="menu" />
+                <label class="active" for="drop1"
+                  >Home <i class="fa-solid fa-plus"></i>
+                  <ul class="submenu">
+                    <li><a href="#">Home 1</a></li>
+                    <li><a href="#">Home 2</a></li>
+                    <li><a href="#">Home 3 [Slider Style 1]</a></li>
+                    <li><a href="#">Home 4 [Slider Style 2]</a></li>
+                    <li><a href="#">Home [RTL Language]</a></li>
+                  </ul>
+                </label>
+              </li>
+              <li class="dropdown-parent">
+                <input id="drop0" type="checkbox" name="menu" />
+                <label for="drop0">About Us</label>
+                <ul class="submenu"></ul>
+              </li>
+
+              <li class="dropdown-parent">
+                <input id="drop3" type="checkbox" name="menu" />
+                <label for="drop3"
+                  >Services <i class="fa-solid fa-plus"></i>
+                  <ul class="submenu">
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Single</a></li>
+                  </ul>
+                </label>
+              </li>
+              <li class="dropdown-parent">
+                <input id="drop4" type="checkbox" name="menu" />
+                <label for="drop4"
+                  >Portfolio <i class="fa-solid fa-plus"></i>
+                  <ul class="submenu">
+                    <li><a href="#">Portfolio Grid</a></li>
+                    <li><a href="#">Portfolio Slider</a></li>
+                    <li><a href="#">Portfolio Single</a></li>
+                  </ul>
+                </label>
+              </li>
+              <li class="dropdown-parent">
+                <input id="drop5" type="checkbox" name="menu" />
+                <label for="drop5"
+                  >Blog <i class="fa-solid fa-plus"></i>
+                  <ul class="submenu">
+                    <li><a href="#">Blog Home 1 Column</a></li>
+                    <li><a href="#">Blog Home 2 Column</a></li>
+                    <li><a href="#">Blog Home 3 Column</a></li>
+                  </ul>
+                </label>
+              </li>
+              <li class="dropdown-parent">
+                <input id="drop6" type="checkbox" name="menu" />
+                <label for="drop6"
+                  >Pages <i class="fa-solid fa-plus"></i>
+                  <ul class="submenu">
+                    <li><a href="#">Pricing Plans</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Team Member</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">404 Page</a></li>
+                  </ul>
+                </label>
+              </li>
+              <li>
+                <label><a href="">Contact Us</a></label>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="nav__controls">
+            <div class="burger__menu">
+              <span></span>
+              <span></span>
+              <span></span>
+>>>>>>> 06565328f24c76437e760bb4bd68d36e292ff4ee
             </div>
+
+            <div class="search__btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <div class="whychoose__info">
-              <div class="whychoose__number">02.</div>
-              <div class="whychoose__content">
-              <h5>Uniqe Solutions</h5>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
+
+            <div class="mode__btn">
+              <i class="theme far fa-sun" id="toggleMode"></i>
             </div>
-            </div>
-            <div class="whychoose__info">
-              <div class="whychoose__number">03.</div>
-              <div class="whychoose__content">
-              <h5>Powerful Strategies</h5>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repellendus minima reiciendis nobis dolore obcaecati.</p>
-            </div>
-            </div>
-            <div class="whychoose__btn">
-            <button>Get In Touch</button>
           </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT US -->
+    <section class="about">
+      <div class="container">
+        <div class="about__wrapper">
+          <div class="about__contents">
+            <span>•ABOUT US•</span>
+            <h2>Trusted By Worldwide<br />Clients Since 1980.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A officia
+              molestiae dolorum tempora ut accusamus cupiditate! Nesciunt
+              tempora reiciendis libero voluptate!
+            </p>
+            <div class="about__details">
+              <div class="about__info">
+                <div class="about__icons">
+                  <i class="fa-solid fa-medal"></i>
+                </div>
+                <div class="about__content">
+                  <h5>First On Field</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aspernatur, iste
+                  </p>
+                </div>
+              </div>
+              <div class="about__info">
+                <div class="about__icons">
+                  <i class="fa-regular fa-hand"></i>
+                </div>
+                <div class="about__content">
+                  <h5>Easy To Reach</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aspernatur, iste
+                  </p>
+                </div>
+              </div>
+              <div class="about__info">
+                <div class="about__icons">
+                  <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div class="about__content">
+                  <h5>Worldwide Services</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aspernatur, iste
+                  </p>
+                </div>
+              </div>
+              <div class="about__info">
+                <div class="about__icons">
+                  <i class="fa-solid fa-gears"></i>
+                </div>
+                <div class="about__content">
+                  <h5>24/7 Support</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aspernatur, iste
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="about__bottom">
+              <div class="about__btn">
+                <button>Get In Touch</button>
+              </div>
+              <div class="about__imgname">
+                <img src="./images/signature-light.png" alt="" />
+                <p>CEO & FOUNDER</p>
+              </div>
+            </div>
+          </div>
+          <div class="about__image">
+            <img src="./images/about us.png" alt="" />
           </div>
         </div>
       </div>
     </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="container">
-    <div class="stats__wrapper">
-        <div class="stats__content">
-          <div class="stats__box">
-            <i class="fa-solid fa-gear"></i>
-           <div class="counter">750</div>
-            <p class="text">Finished Projects</p>
+    <!--WHY CHOOSE US-->
+    <section class="whychoose">
+      <div class="container">
+        <div class="whychoose__wrapper">
+          <div class="whychoose__image">
+            <img src="./images/why choose us.png" alt="" />
           </div>
-          <div class="stats__box">
-            <i class="fa-solid fa-gear"></i>
-           <div class="counter">23</div>
-            <p class="text">Created Jobs</p>
+          <div class="whychoose__contents">
+            <span>•WHY CHOOSE US•</span>
+            <h2>Why Our Customers <br />Choose Working With Us</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A officia
+              molestiae dolorum tempora ut accusamus cupiditate! Nesciunt
+              tempora reiciendis libero voluptate!
+            </p>
+            <div class="whychoose__info">
+              <div class="whychoose__number">01.</div>
+              <div class="whychoose__content">
+                <h5>Latest Technologies</h5>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                  repellendus minima reiciendis nobis dolore obcaecati.
+                </p>
+              </div>
+            </div>
+            <div class="whychoose__info">
+              <div class="whychoose__number">02.</div>
+              <div class="whychoose__content">
+                <h5>Uniqe Solutions</h5>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                  repellendus minima reiciendis nobis dolore obcaecati.
+                </p>
+              </div>
+            </div>
+            <div class="whychoose__info">
+              <div class="whychoose__number">03.</div>
+              <div class="whychoose__content">
+                <h5>Powerful Strategies</h5>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                  repellendus minima reiciendis nobis dolore obcaecati.
+                </p>
+              </div>
+            </div>
+            <div class="whychoose__btn">
+              <button>Get In Touch</button>
+            </div>
           </div>
-          <div class="stats__box">
-            <i class="fa-solid fa-gear"></i>
-           <div class="counter">200</div>
-            <p>Happy Customers</p>
-          </div>
-          <div class="stats__box">
-            <i class="fa-solid fa-gear"></i>
-           <div class="counter">28</div>
-            <p>Years of Experience</p>
-          </div>
-        </div>   
-    </div>
-  </div>
-</section>
-
-  <!-- CLIENTS -->
-<section class="clients">
-  <h2>Trusted By Over 500 Clients Around The World</h2>
-  <div class="container">
-    <div class="clients__wrapper">
-      <div class="clients__slider">
-        <img src="./images/clients1.png" alt="">
-        <img src="./images/clients2.png" alt="">
-        <img src="./images/clients3.png" alt="">
-        <img src="./images/clients4.png" alt="">
-        <img src="./images/clients5.png" alt="">
-        <img src="./images/clients6.png" alt="">
-        <img src="./images/clients7.png" alt="">
+        </div>
       </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats__wrapper">
+          <div class="stats__content">
+            <div class="stats__box">
+              <i class="fa-solid fa-gear"></i>
+              <div class="counter">750</div>
+              <p class="text">Finished Projects</p>
+            </div>
+            <div class="stats__box">
+              <i class="fa-solid fa-gear"></i>
+              <div class="counter">23</div>
+              <p class="text">Created Jobs</p>
+            </div>
+            <div class="stats__box">
+              <i class="fa-solid fa-gear"></i>
+              <div class="counter">200</div>
+              <p>Happy Customers</p>
+            </div>
+            <div class="stats__box">
+              <i class="fa-solid fa-gear"></i>
+              <div class="counter">28</div>
+              <p>Years of Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section class="clients">
+      <h2>Trusted By Over 500 Clients Around The World</h2>
+      <div class="container">
+        <div class="clients__wrapper">
+          <div class="clients__slider">
+            <img src="./images/clients1.png" alt="" />
+            <img src="./images/clients2.png" alt="" />
+            <img src="./images/clients3.png" alt="" />
+            <img src="./images/clients4.png" alt="" />
+            <img src="./images/clients5.png" alt="" />
+            <img src="./images/clients6.png" alt="" />
+            <img src="./images/clients7.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="logo-p">
+            <img src="./images/logo-colored.png" alt="" />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius aut
+              dolores autem quos mollitia! Amet tenetur consectetur iure
+              sapiente nisi debitis cum officia rerum, ullam impedit laboriosam
+              aspernatur cumque maiores.
+            </p>
+            <div class="form__block">
+              <form class="one-field-form" method="post" action="#0">
+                <div class="field-group">
+                  <label class="email-label" for="email-input">
+                    Subscribe to our news letter</label
+                  >
+                  <input
+                    class="email-input"
+                    type="email"
+                    value=""
+                    name="EMAIL"
+                    id="email-input"
+                    placeholder="Email Address"
+                    autocomplete="off"
+                  />
+                  <div class="cta-area">
+                    <input
+                      class="btn-solid subscribe-btn"
+                      type="submit"
+                      value="Subscribe"
+                      name="subscribe"
+                    />
+                  </div>
+                </div>
+                <span class="email-notice"
+                  >*we will not share your personal info</span
+                >
+              </form>
+            </div>
+          </div>
+
+          <div class="links__block__wrapper">
+            <div class="links__block">
+              <h2 class="links-title">useful links</h2>
+              <div class="links-wrapper">
+                <ul class="links-menu">
+                  <li class="links-menu-item">
+                    <i class="fa fa-arrow-right"></i
+                    ><a class="links-menu-link" href="#0">Google</a>
+                  </li>
+                  <li class="links-menu-item">
+                    <i class="fa fa-arrow-right"></i
+                    ><a class="links-menu-link" href="#0">Dribbble</a>
+                  </li>
+                  <li class="links-menu-item">
+                    <i class="fa fa-arrow-right"></i
+                    ><a class="links-menu-link" href="#0">linkedIn</a>
+                  </li>
+                  <li class="links-menu-item">
+                    <i class="fa fa-arrow-right"></i
+                    ><a class="links-menu-link" href="#0">wikipedia</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="links__block">
+              <h2 class="links-title">Resources</h2>
+              <div class="links-wrapper">
+                <ul class="links-menu">
+                  <li class="links-menu-item">
+                    <i class="fa fa-arrow-right"></i
+                    ><a class="links-menu-link" href="#0">Support</a>
+                  </li>
+                  <li class="links-menu-item">
+                    <i class="fa fa-arrow-right"></i
+                    ><a class="links-menu-link" href="#0">Dashboard</a>
+                  </li>
+                  <li class="links-menu-item">
+                    <i class="fa fa-arrow-right"></i
+                    ><a class="links-menu-link" href="#0">Drivers</a>
+                  </li>
+                  <li class="links-menu-item">
+                    <i class="fa fa-arrow-right"></i
+                    ><a class="links-menu-link" href="#0">Projects</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__block">
+            <h2 class="contact-title">contact information</h2>
+            <div class="contact-wrapper">
+              <div class="contact-info-card">
+                <i class="fa-regular fa-envelope"> </i
+                ><a href="">example@support.com</a>
+              </div>
+              <div class="contact-info-card">
+                <i class="fa-regular fa-map"></i>
+                <span>5 Xyz st., Abc, alexandria, egypt.</span>
+              </div>
+              <div class="contact-info-card">
+                <i class="fa fa-mobile-screen"></i>
+                <a>+20123456789</a>
+              </div>
+              <div class="social-icons">
+                <div class="sc-wrapper">
+                  <ul class="sc-list">
+                    <li class="sc-item">
+                      <a class="sc-link" href="#0">
+                        <i class="fab fa-facebook-f sc-icon"></i>
+                      </a>
+                    </li>
+                    <li class="sc-item">
+                      <a class="sc-link" href="#0">
+                        <i class="fab fa-youtube sc-icon"></i>
+                      </a>
+                    </li>
+                    <li class="sc-item">
+                      <a class="sc-link" href="#0">
+                        <i class="fab fa-instagram sc-icon"></i>
+                      </a>
+                    </li>
+                    <li class="sc-item">
+                      <a class="sc-link" href="#0">
+                        <i class="fab fa-twitter sc-icon"> </i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights">
+        <div class="container">
+          <div class="copyrights__wrapper">
+            <div class="created">
+              <p class="creadits">
+                © 2023 Created by:
+
+                <a class="link" href="#0">amin-themes</a>
+              </p>
+            </div>
+            <div class="terms">
+              <div class="terms-links">
+                <a href="#0">Terms of Use </a> |
+                <a
+                  href="#0"
+                  data-bs-toggle="modal"
+                  data-bs-target="#privacyPolicyModal"
+                  >Privacy Policy.</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+
+    <div id="topbtn" class="topbtn">
+      <a href="#top">
+        <img src="./images/arrow-up.svg" alt="" />
+      </a>
     </div>
-  </div>
-</section>
 
-
- <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
- <script>
- var slider = tns({
-  container: ".clients__slider",
-  items:3,
-  autoplay: true,
-  autoplayButtonOutput: false,
-  controls: false,
-  mouseDrag:true,
-  nav:false,
-  slideBy: "page",
-  swipeAngle: false,
-  speed: 400,
-  gutter: 15,
-  responsive: {
-              420: {
-                items: 6,
-                gutter: 20
-              },
-            },
-});
-</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+    <script>
+      var slider = tns({
+        container: ".clients__slider",
+        items: 3,
+        autoplay: true,
+        autoplayButtonOutput: false,
+        controls: false,
+        mouseDrag: true,
+        nav: false,
+        slideBy: "page",
+        swipeAngle: false,
+        speed: 400,
+        gutter: 15,
+        responsive: {
+          420: {
+            items: 6,
+            gutter: 20,
+          },
+        },
+      });
+    </script>
 
     <script>
-      $(document).ready(function(){
+      $(document).ready(function () {
         $(".counter").counterUp({
-          delay:10,
-          time: 1200
+          delay: 10,
+          time: 1200,
         });
       });
     </script>
 
+    <script>
+      const searchBTN = document.querySelector(".search__btn");
+      const searchContainer = document.querySelector(".header-search-box");
+      const close = document.querySelector(".close-search");
+      searchBTN.addEventListener("click", () => {
+        searchBTN.classList.toggle("show");
+        searchContainer.classList.toggle("show");
+      });
+      close.addEventListener("click", () => {
+        searchBTN.classList.remove("show");
+        searchContainer.classList.remove("show");
+      });
+
+      const burgerbtn = document.querySelector(".burger__menu");
+      const headerA = document.querySelector("nav");
+      burgerbtn.addEventListener("click", () => {
+        burgerbtn.classList.toggle("open");
+        headerA.classList.toggle("open");
+      });
+    </script>
+
+    <script>
+      const toggleMenu = document.querySelector("#toggleMode");
+      const menu = document.querySelector("#menu");
+      const body = document.querySelector("body");
+      const icon = document.querySelector(".far");
+
+      toggleMenu.addEventListener("click", () => {
+        menu.classList.toggle("open");
+        body.classList.toggle("open");
+      });
+
+      const btnTheme = document.querySelector(".theme");
+      const root = document.querySelector(":root");
+
+      btnTheme.addEventListener("click", () => {
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+          root.style.setProperty("--light", "#fff");
+          root.style.setProperty("--dark", "#1f1f1f");
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        } else {
+          body.classList.add("dark");
+          root.style.setProperty("--light", "#1f1f1f");
+          root.style.setProperty("--dark", "#fff");
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+        }
+      });
+    </script>
+
+    <script>
+      let anchorTop = document.getElementById("topbtn");
+      let header = document.getElementById("header");
+
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          header.classList.add("sticky");
+          anchorTop.style.opacity = "100%";
+        } else {
+          header.classList.remove("sticky");
+          anchorTop.style.opacity = "0%";
+        }
+      }
+    </script>
   </body>
 </html>
