@@ -15,9 +15,9 @@
     />
   </head>
   <body>
+    <a id="top"></a>
     <!-- HEADER -->
-
-    <header class="header">
+    <header id="header" class="header">
       <div class="header-search-box">
         <div class="close-search"></div>
         <form
@@ -51,12 +51,15 @@
               <li class="dropdown-parent">
                 <input id="drop1" type="checkbox" name="menu" />
                 <label class="active" for="drop1"
-                  >Home <i class="fa-solid fa-plus"></i
-                ></label>
-                <ul class="submenu">
-                  <li><a href="#">Item 1</a></li>
-                  <li><a href="#">Item 2</a></li>
-                </ul>
+                  >Home <i class="fa-solid fa-plus"></i>
+                  <ul class="submenu">
+                    <li><a href="#">Home 1</a></li>
+                    <li><a href="#">Home 2</a></li>
+                    <li><a href="#">Home 3 [Slider Style 1]</a></li>
+                    <li><a href="#">Home 4 [Slider Style 2]</a></li>
+                    <li><a href="#">Home [RTL Language]</a></li>
+                  </ul>
+                </label>
               </li>
               <li class="dropdown-parent">
                 <input id="drop0" type="checkbox" name="menu" />
@@ -67,40 +70,47 @@
               <li class="dropdown-parent">
                 <input id="drop3" type="checkbox" name="menu" />
                 <label for="drop3"
-                  >Services <i class="fa-solid fa-plus"></i
-                ></label>
-                <ul class="submenu">
-                  <li><a href="#">Item 1</a></li>
-                  <li><a href="#">Item 2</a></li>
-                </ul>
+                  >Services <i class="fa-solid fa-plus"></i>
+                  <ul class="submenu">
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Single</a></li>
+                  </ul>
+                </label>
               </li>
               <li class="dropdown-parent">
                 <input id="drop4" type="checkbox" name="menu" />
                 <label for="drop4"
-                  >Portfolio <i class="fa-solid fa-plus"></i
-                ></label>
-                <ul class="submenu">
-                  <li><a href="#">Item 1</a></li>
-                  <li><a href="#">Item 2</a></li>
-                </ul>
+                  >Portfolio <i class="fa-solid fa-plus"></i>
+                  <ul class="submenu">
+                    <li><a href="#">Portfolio Grid</a></li>
+                    <li><a href="#">Portfolio Slider</a></li>
+                    <li><a href="#">Portfolio Single</a></li>
+                  </ul>
+                </label>
               </li>
               <li class="dropdown-parent">
                 <input id="drop5" type="checkbox" name="menu" />
-                <label for="drop5">Blog <i class="fa-solid fa-plus"></i></label>
-                <ul class="submenu">
-                  <li><a href="#">Item 1</a></li>
-                  <li><a href="#">Item 2</a></li>
-                </ul>
+                <label for="drop5"
+                  >Blog <i class="fa-solid fa-plus"></i>
+                  <ul class="submenu">
+                    <li><a href="#">Blog Home 1 Column</a></li>
+                    <li><a href="#">Blog Home 2 Column</a></li>
+                    <li><a href="#">Blog Home 3 Column</a></li>
+                  </ul>
+                </label>
               </li>
               <li class="dropdown-parent">
                 <input id="drop6" type="checkbox" name="menu" />
                 <label for="drop6"
-                  >Pages <i class="fa-solid fa-plus"></i
-                ></label>
-                <ul class="submenu">
-                  <li><a href="#">Item 1</a></li>
-                  <li><a href="#">Item 2</a></li>
-                </ul>
+                  >Pages <i class="fa-solid fa-plus"></i>
+                  <ul class="submenu">
+                    <li><a href="#">Pricing Plans</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Team Member</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">404 Page</a></li>
+                  </ul>
+                </label>
               </li>
               <li>
                 <label><a href="">Contact Us</a></label>
@@ -127,13 +137,11 @@
       </div>
     </header>
 
+    <!-- HEADER END-->
+
     <!-- BODY -->
 
-    <section class="sample__section">
-      <div class="container">
-        <h1>SAMPLE SECTION</h1>
-      </div>
-    </section>
+    <!-- BODY END -->
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -299,6 +307,13 @@
         </div>
       </div>
     </footer>
+    <!-- FOOTER END -->
+
+    <div id="topbtn" class="topbtn">
+      <a href="#top">
+        <img src="./images/arrow-up.svg" alt="" />
+      </a>
+    </div>
 
     <script>
       const searchBTN = document.querySelector(".search__btn");
@@ -350,6 +365,28 @@
           icon.classList.add("fa-moon");
         }
       });
+    </script>
+
+    <script>
+      let anchorTop = document.getElementById("topbtn");
+      let header = document.getElementById("header");
+
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          header.classList.add("sticky");
+          anchorTop.style.opacity = "100%";
+        } else {
+          header.classList.remove("sticky");
+          anchorTop.style.opacity = "0%";
+        }
+      }
     </script>
   </body>
 </html>

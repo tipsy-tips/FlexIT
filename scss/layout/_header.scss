@@ -11,13 +11,24 @@
   border-bottom: 1px solid transparent;
 
   @include mediaQuery {
-    background-color: $clr-primary;
+    background-color: transparent;
+    &.sticky {
+      background-color: $clr-primary;
+    }
   }
 
   &__wrapper {
+    @include mediaQuery {
+      padding: unset;
+    }
     padding: 2rem 0rem;
     display: flex;
     justify-content: space-between;
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
 
     nav {
       @include mediaQuery {
@@ -27,6 +38,7 @@
         z-index: unset;
         height: unset;
         width: unset;
+        background-color: transparent;
       }
 
       position: absolute;
@@ -42,11 +54,12 @@
         left: 0;
         width: 75%;
       }
+
       .nav-links {
         @include mediaQuery {
           padding-top: unset;
           display: flex;
-          gap: 1.7rem;
+          gap: 2.5rem;
         }
         color: $clr-light;
         padding-top: 5rem;
@@ -61,26 +74,57 @@
         input {
           display: none;
         }
-        // INACTIVE SUBMENU
+        // INACTIVE SUBMENU - Mobile
         .submenu {
+          // INACTIVE SUBMENU - Desktop
+          @include mediaQuery {
+            position: absolute;
+            top: 200px;
+            background-color: $clr-primary;
+            opacity: 0;
+            transition: all 0.5s ease-out;
+            li {
+              padding: 1rem;
+            }
+          }
+          width: 250px;
           max-height: 0;
-          transition: max-height 0.3s ease-out;
+          transition: max-height 0.5s ease-out;
           overflow: hidden;
         }
 
-        // OPEN SUBMENU
-        input:checked ~ .submenu {
-          max-height: 50px;
-          transition: max-height, 0.3s ease-in;
+        // OPEN SUBMENU - MOBILE
+        input:checked ~ label .submenu {
+          max-height: 100px;
+          transition: max-height, 0.5s ease-in;
         }
+
+        // OPEN SUBMENU - Desktop
+        @include mediaQuery {
+          label:hover .submenu {
+            top: 90px;
+            max-height: 500px;
+            opacity: 1;
+            transition: all 0.5s ease-in;
+          }
+        }
+
         label {
           @include mediaQuery {
-            padding: 1rem 1rem 1rem 0rem;
+            height: 100px;
+            padding: unset;
+            display: flex;
+            gap: 5px;
+            align-items: center;
           }
           padding: 2.5rem 2.5rem 2.5rem 0rem;
           display: block;
           position: relative;
           cursor: pointer;
+
+          i {
+            font-size: 1.4rem;
+          }
 
           &:hover {
             &::before {
@@ -89,7 +133,7 @@
           }
           &::before {
             @include mediaQuery {
-              top: 19px;
+              top: 47px;
             }
             content: "";
             position: absolute;
@@ -111,6 +155,7 @@
         }
 
         .dropdown-parent {
+          position: relative;
           .nav-links-dropdown {
             position: relative;
             left: 0px;
