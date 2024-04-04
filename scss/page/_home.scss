@@ -3,3 +3,287 @@
 @use "../abstract/" as *;
 @use "../components/" as *;
 @use "../vendor/" as *;
+<<<<<<< HEAD
+=======
+
+// ABOUT US
+.about{
+  background-color: $clr-secondary;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  &__wrapper{
+    @include mediaQuery{
+      @include grid(2);
+      grid-column-gap: 10rem;
+    }
+    @include grid(1);
+    grid-column-gap: 10rem;
+  }
+  &__image{
+    @include mediaQuery{
+      margin: auto;
+      order: 1;
+    }
+    order: -1;
+    margin: auto;
+  }
+  &__contents{
+    span{
+      font-size:16px;
+      color: $clr-primary;
+      font-weight: 500;
+    }
+    h2{
+      font-size: clamp(32px, 6vw, 48px);
+      color: #fff;
+    }
+    p{
+      color: #fff;
+    }
+  }
+  &__details{
+    @include mediaQuery{
+      @include grid (2);
+      grid-column-gap:5rem;
+    }
+    @include grid(1);
+    grid-column-gap:5rem;
+  }
+  &__info{
+    @include mediaQuery{
+      @include flex;
+      gap: 2rem;
+    }
+    margin-bottom: .5rem;
+  }
+  &__icons {
+    margin-top: 2rem;
+  position: relative;
+  display: inline-block;
+   width: 68px;
+   height: 68px;
+    background-color: rgba(9, 175, 244, 0.15); 
+    padding: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+
+    i {
+        color: #09aff4; 
+        font-size: 3rem; 
+
+        &__icons:hover & {
+            color: #fff;
+        }
+    }
+
+    &:hover {
+        background-color: #09aff4; 
+        transform: translateY(-5px); 
+
+        i {
+            color: #fff; 
+        }
+    }
+
+ }
+  &__content{
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    h5{
+      font-size: clamp(2rem, 6vw, 2rem);
+      color: #fff;
+    }
+  }
+  &__bottom{
+    @include mediaQuery{
+      @include flex (space-between, center);
+    }
+    
+  }
+  &__imgname{
+    p{
+      @include mediaQuery{
+        text-align: center;
+      }
+      color: $clr-primary;
+    }
+  }
+  &__btn{
+      button{
+        letter-spacing: 0.1rem;
+        font-weight: bold;
+        font-size: 17.6px;
+        padding: 8px 20px ;
+        border: 2px solid $clr-primary;
+        border-top-right-radius: 1.5rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 0.5rem;
+        color: $clr-light;
+        background-color: $clr-primary;
+        font-weight: 500;
+
+         
+      }
+      button:hover {
+        background: $clr-secondary;
+        color: $clr-primary;
+        border: 2px solid $clr-primary;
+              
+    }
+
+}
+}
+
+// WHY CHOOSE US
+.whychoose{
+  background-color: $clr-secondary;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  &__wrapper{
+    @include mediaQuery{
+      @include grid(2);
+      grid-column-gap: 10rem;
+    }
+    @include grid(1);
+    grid-column-gap: 10rem;
+  }
+  &__image{
+    margin: auto;
+  }
+  &__contents{
+    span{
+      font-size:16px;
+      color: $clr-primary;
+      font-weight: 500;
+    }
+    h2{
+      font-size: clamp(32px, 6vw, 48px);
+      color: #fff;
+    }
+    p{
+      color: #fff;
+    }
+  }
+  &__info{
+    @include mediaQuery{
+      @include flex;
+    }
+    
+    gap:2rem;
+  }
+  &__number{
+    font-size: clamp(5rem, 6vw, 5rem);
+    font-weight: 700;
+    color: $clr-primary;
+  
+  }
+  &__content{
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    h5{
+      font-size: clamp(2rem, 6vw, 2rem);
+      color: #fff;
+    }
+  }
+  &__btn{
+      button{
+        letter-spacing: 0.1rem;
+        font-weight: bold;
+        font-size: 17.6px;
+        padding: 8px 20px ;
+        border: 2px solid $clr-primary;
+        border-top-right-radius: 1.5rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 0.5rem;
+        color: $clr-light;
+        background-color: $clr-primary;
+        font-weight: 500;
+         
+      }
+      button:hover {
+        background: $clr-secondary;
+        color: $clr-primary;
+        border: 2px solid $clr-primary;
+               
+    }
+
+}
+}
+// STATS
+.stats{
+  background-image: url(../../images/1000050673.jpg);
+ 
+  background-size: cover;
+  background-position: center;
+
+  &__content{
+    @include flex (space-between, center);
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    flex-wrap: wrap;
+  }
+  &__box{
+    @include mediaQuery{
+      width: calc(25% - 30px);
+    }
+   width: 100%;
+   margin-bottom: 2rem;
+    border: 1px solid#09aff4;
+    border-top: 5px solid #09aff4;
+    border-radius: 5px;
+    padding: 20px;
+    @include flex(space-evenly, center);
+    color: #fff;
+    flex-direction: column;
+
+    i{
+      font-size: 48px;
+      color: $clr-primary;
+    }
+    .counter{
+      font-size: 50px;
+      font-weight: 600;
+      color: #fff;
+    }
+    p{
+      font-size: 25px;
+      color: #fff;
+    }
+  }
+}
+
+// CLIENTS
+.clients{
+  background-color: $clr-primary;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  @include mediaQuery{
+    padding: 8rem;
+  }
+ 
+  h2{
+    text-align: center;
+    color: #fff;
+    opacity: 0.7;
+  }
+  &__slider{
+    cursor:grabbing;
+    img{
+      cursor:pointer;
+      width: auto;
+      max-height: 125px;
+      margin: 5px;
+      border-radius: 0.25rem;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+
+      &:hover{
+        filter:grayscale(0%);
+      }
+    }
+
+  }
+}
+>>>>>>> 48b569674145e1cd8c43d9dbccfadd31caa74ba9
