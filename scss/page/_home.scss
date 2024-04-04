@@ -3,11 +3,3 @@
 @use "../abstract/" as *;
 @use "../components/" as *;
 @use "../vendor/" as *;
-
-.banner {
-  &__wrapper {
-    h1 {
-      color: aqua;
-    }
-  }
-}

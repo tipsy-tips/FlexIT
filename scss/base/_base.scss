@@ -9,13 +9,28 @@ html {
   font-size: 10px;
 }
 
+body.dark * {
+  transition: ease-in-out 0.5s;
+}
+
+body.light * {
+  transition: ease-in-out 0.5s;
+}
+
+body * {
+  transition: ease-in-out 0.5s;
+}
+
 body {
   font-family: "Main", arial, sans-serif;
-  color: rgba($clr-dark, 0.7);
-  background-color: $clr-light;
+  background-color: $clr-secondary;
   line-height: 1.6;
   font-size: 1.6rem;
   color: $clr-dark;
+}
+
+input {
+  font-family: "Main", arial, sans-serif;
 }
 
 a {
