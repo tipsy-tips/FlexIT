@@ -271,21 +271,21 @@
     transition: background-color 0.3s, transform 0.3s;
 
     i {
-      color: $clr-primary;
-      font-size: 3rem;
+        color:#09aff4; 
+        font-size: 3rem; 
 
-      &__icons:hover & {
-        color: $clr-light;
-      }
+        &__icons:hover & {
+            color:#fff;
+        }
     }
 
     &:hover {
-      background-color: $clr-primary;
-      transform: translateY(-5px);
+        background-color:#09aff4; 
+        transform: translateY(-5px); 
 
-      i {
-        color: $clr-primary;
-      }
+        i {
+            color: #fff; 
+        }
     }
   }
   &__content {
@@ -293,7 +293,7 @@
     margin-bottom: 4rem;
     h5 {
       font-size: clamp(2rem, 6vw, 2rem);
-      color: $clr-primary;
+      color: $clr-light;
     }
   }
   &__bottom {
@@ -309,25 +309,26 @@
       color: $clr-primary;
     }
   }
-  &__btn {
-    button {
-      letter-spacing: 0.1rem;
-      font-weight: bold;
-      font-size: 17.6px;
-      padding: 8px 20px;
-      border: 2px solid $clr-primary;
-      border-top-right-radius: 1.5rem;
-      border-top-left-radius: 0.5rem;
-      border-bottom-left-radius: 1.5rem;
-      border-bottom-right-radius: 0.5rem;
-      color: $clr-light;
-      background-color: $clr-primary;
-      font-weight: 500;
-    }
-    button:hover {
-      background: $clr-secondary;
-      color: $clr-primary;
-      border: 2px solid $clr-primary;
+  &__btn{
+      button{
+        letter-spacing: 0.1rem;
+        font-weight: 600;
+        font-size: 17.6px;
+        padding: 8px 20px ;
+        border: 2px solid $clr-primary;
+        border-top-right-radius: 1.5rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 0.5rem;
+        color: #fff;
+        background-color: $clr-primary;
+        
+      }
+      button:hover {
+        background: $clr-secondary;
+        color: $clr-primary;
+        border: 2px solid $clr-primary;
+              
     }
   }
 }
@@ -351,10 +352,10 @@
   &__contents {
     h2 {
       font-size: clamp(32px, 6vw, 48px);
-      color: $clr-primary;
+      color: $clr-light;
     }
-    p {
-      color: $clr-primary;
+    p{
+      color: $clr-light;
     }
   }
   &__info {
@@ -367,35 +368,38 @@
   &__number {
     font-size: clamp(5rem, 6vw, 5rem);
     font-weight: 700;
-    color: $clr-primary;
+    color: #09aff4;
+  
   }
   &__content {
     margin-top: 2rem;
     margin-bottom: 4rem;
     h5 {
       font-size: clamp(2rem, 6vw, 2rem);
-      color: $clr-primary;
+      color: $clr-light;
     }
   }
-  &__btn {
-    button {
-      letter-spacing: 0.1rem;
-      font-weight: bold;
-      font-size: 17.6px;
-      padding: 8px 20px;
-      border: 2px solid $clr-primary;
-      border-top-right-radius: 1.5rem;
-      border-top-left-radius: 0.5rem;
-      border-bottom-left-radius: 1.5rem;
-      border-bottom-right-radius: 0.5rem;
-      color: $clr-light;
-      background-color: $clr-primary;
-      font-weight: 500;
-    }
-    button:hover {
-      background: $clr-secondary;
-      color: $clr-primary;
-      border: 2px solid $clr-primary;
+  &__btn{
+      button{
+        letter-spacing: 0.1rem;
+        font-weight: 600;
+        font-size: 17.6px;
+        padding: 8px 20px ;
+        border: 2px solid $clr-primary;
+        border-top-right-radius: 1.5rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 0.5rem;
+        color: #fff;
+        background-color: $clr-primary;
+       
+         
+      }
+      button:hover {
+        background: $clr-secondary;
+        color: $clr-primary;
+        border: 2px solid $clr-primary;
+               
     }
   }
 }
@@ -454,11 +458,11 @@
     .counter {
       font-size: 50px;
       font-weight: 600;
-      color: $clr-primary;
+      color:#fff;
     }
     p {
       font-size: 25px;
-      color: $clr-primary;
+      color:#fff;
     }
   }
 }
@@ -474,8 +478,9 @@
 
   h2 {
     text-align: center;
-    color: $clr-primary;
-    opacity: 0.7;
+    color: #fff;
+    opacity: 0.35;
+    font-weight: 500;
   }
   &__slider {
     cursor: grabbing;
