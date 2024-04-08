@@ -262,7 +262,6 @@
   &__icons {
   margin-top: 2rem;
   position: relative;
-  display: inline-block;
    width: 68px;
    height: 68px;
     background-color: rgba(9, 175, 244, 0.15); 
@@ -273,6 +272,8 @@
     i {
         color:#09aff4; 
         font-size: 3rem; 
+        width: 30px;
+        height: 30px;
 
         &__icons:hover & {
             color:#fff;
