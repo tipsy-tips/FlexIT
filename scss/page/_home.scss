@@ -425,6 +425,9 @@
     flex-wrap: wrap;
   }
   &__box{
+    img{
+      width: 48px;
+    }
     @include mediaQuery{
       width: calc(25% - 30px);
     }
@@ -437,11 +440,6 @@
     @include flex(space-evenly, center);
     color: $clr-primary;
     flex-direction: column;
-
-    i{
-      font-size: 48px;
-      color: $clr-primary;
-    }
     .counter{
       font-size: 50px;
       font-weight: 600;
@@ -594,7 +592,8 @@
   &__cards{
     position: relative;
     margin-top: 2rem;
-    border:0.5px solid $clr-primary;
+    border: 1px solid rgba(#09aff4, 0.35);
+    box-shadow: 0px 0px 10px 0px rgba(#060922, 0.1);
     border-radius: 1rem;
     padding: 32px;
     transition: all 0.3s ease;
@@ -618,8 +617,10 @@
   }
 
   &__cardicon{
-    color: $clr-primary;
-      font-size: 40px;
+    margin-bottom: 2rem;
+    img{
+      width: 48px;
+    }
   }
 
 }
@@ -724,6 +725,13 @@
         scale: 1.1;
         transition: all 0.5s ease;
       }
+      .portfolio__arrow{
+        transform: translateX(0);
+        transition-delay: 300ms;
+      }
+      .portfolio__name{
+        transform: translateY(0);
+      }
   }
   }
   &__arrow{
@@ -735,6 +743,7 @@
     height: 6rem;
     width: 6rem;
     align-content: center;
+    transform: translateX(-100%);
     i{
       padding: 2rem;
       color: $clr-light;
@@ -750,6 +759,7 @@
     width: 100%;
     height: 6rem;
     align-content: center;
+    transform: translateY(100%);
     h4{
       margin-bottom: 0;
       color: $clr-light;
@@ -773,15 +783,28 @@
     }
   }
   &__cardlist{
-    @include mediaQuery{
+    @include for-size(desktop){
       @include flex(space-between, center);
       gap: 3rem;
     }
   }
   &__cards{
+    background-color: #09AFF426;
     position: relative;
     margin-bottom: 3rem;
     transition: all 0.5s ease;
+    border-radius: 0.5rem;
+   
+    img{
+     
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        overflow: clip;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
     &:hover{
       img{
         scale: 1.1;
@@ -798,6 +821,13 @@
     top: 2rem;
     left: 2rem;
     z-index: 9;
+    @include for-size(tablet){
+      top: 2rem;
+      left: 21%;
+    }
+    @include mediaQuery{
+      left: 1rem;
+    }
     p{
       line-height: 2;
       margin-bottom: 0;
@@ -849,10 +879,6 @@
         }
       }
     }
-  }
-
-  &__cards{
-    background-color: $clr-accent;
   }
   &__cardsinfo{
     padding: 2rem;
@@ -968,17 +994,26 @@
 
   &__cardlist{
     @include mediaQuery{
-      @include flex(space-between, center);
+      @include grid(4);
+      gap: 2rem;
+    }
+    @include grid(2);
+    gap: 2rem;
+
+    @include for-size(phone){
+      @include grid(1);
     }
   }
 
   &__cards{
     position: relative;
-    border: 1px solid $clr-primary;
-    padding-top: 13rem;
+    border: 1px solid rgba(#09aff4, 0.35);
+    box-shadow: 0px 0px 10px 0px rgba(#060922, 0.1);
+    padding-top: 5rem;
     margin-bottom: 3rem;
     border-top-left-radius: 0.8rem;
     border-top-right-radius: 0.8rem;
+    overflow: hidden;
 
     h4{
       color: $clr-light;
@@ -991,6 +1026,7 @@
       font-size: 64px;
     }
     h6{
+      position: relative;
       color: $clr-light;
       text-align: center;
       font-size: 17.6px;
@@ -998,7 +1034,18 @@
       padding-bottom: 5rem;
       font-style: italic;
       font-weight: 400;
-
+    }
+    h6::after{
+      content: " ";
+      background: #09aff4;
+      position: absolute;
+      width: 21rem;
+      height: 3px;
+      top: 5rem;
+      left: 25%;
+      @include mediaQuery{
+        left: 15%;
+      }
     }
     ul{
       text-align: center;
@@ -1008,34 +1055,14 @@
         font-size: 16px;
         padding: 12px 0;
       }
-    }
-  }
-  &__cardicon{
-    justify-self: center;
-    i{
-      color: $clr-primary;
-      position: absolute;
-      top: 8%;
-      left: 40%;
-      font-size: 64px;
-      @include mediaQuery{
-        left: 37%;
-      }
-    }
+    }  
   }
 
-  .activea{
-    justify-self: center;
-    i{
-      color: $clr-light;
-      position: absolute;
-      top: 8%;
-      left: 40%;
-      font-size: 64px;
-      @include mediaQuery{
-        left: 37%;
-      }
-    }
+  &__cardicon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
   }
 
   &__cost{
@@ -1051,76 +1078,97 @@
       }
     }
   }
-  .activeb{
-    i{
-      color: $clr-light;
-      font-size: 24px;
-      position: absolute;
-      top: 29%;
-      left: 31%;
-      @include mediaQuery{
-        top: 27%;
-        left: 25%;
-      }
-    }
-  }
+  
 
   &__cardbtn{
-    justify-self: center;
-    margin: 4rem 2rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: 3rem 2rem;
     a{
       letter-spacing: 0.1rem;
       font-weight: bold;
       font-size: 17.6px;
-      padding: 8px 13rem ;
+      width: 100%;
+      padding: 8px 45px;
       border: 2px solid $clr-primary;
       border-top-right-radius: 1.5rem;
       border-top-left-radius: 0.5rem;
       border-bottom-left-radius: 1.5rem;
       border-bottom-right-radius: 0.5rem;
-      color: $clr-light;
+      color: $clr-primary;
       background-color: transparent;
       font-weight: 500;
-      @include mediaQuery{
-        padding: 8px 8rem;
-      }
       &:hover{
         background-color: $clr-primary;
         transition: all 0.5s ease;
-      }
-    }
-  }
-
-  .active{
-    justify-self: center;
-    margin: 4rem 2rem;
-    a{
-      letter-spacing: 0.1rem;
-      font-weight: bold;
-      font-size: 17.6px;
-      padding: 8px 13rem ;
-      border: 2px solid $clr-light;
-      border-top-right-radius: 1.5rem;
-      border-top-left-radius: 0.5rem;
-      border-bottom-left-radius: 1.5rem;
-      border-bottom-right-radius: 0.5rem;
-      color: $clr-light;
-      background-color: transparent;
-      font-weight: 500;
-      transition: all 0.5s ease;
-      @include mediaQuery{
-        padding: 8px 8rem;
-      }
-      &:hover{
-        color: $clr-primary;
-        background-color: $clr-light;
-        transition: all 0.5s ease;
+        color: #ffffff;
       }
     }
   }
 
   &__cards:nth-child(3){
     background-color: $clr-primary;
+    h4,h1,h6{
+      color: #ffffff;
+    }
+    h6::after{
+      content: " ";
+      background: #ffffff;
+      position: absolute;
+      width: 21rem;
+      height: 3px;
+      top: 5rem;
+      left: 25%;
+      @include mediaQuery{
+        left: 15%;
+      }
+    }
+    ul{
+      li{
+        color: #ffffff;
+      }
+    }
+    .price__cardbtn{
+      a{
+        letter-spacing: 0.1rem;
+      font-weight: bold;
+      font-size: 17.6px;
+      width: 100%;
+      padding: 8px 45px;
+      border: 2px solid #ffffff;
+      border-top-right-radius: 1.5rem;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 0.5rem;
+      color: #ffffff;
+      background-color: transparent;
+      font-weight: 500;
+      &:hover{
+        background-color: #ffffff;
+        transition: all 0.5s ease;
+        color: $clr-primary;
+      }
+      }
+    }
+  }
+  &__popular{
+    h5{
+      width: 50rem;
+      font-size: 16px;
+      color: #09aff4;
+      background-color: #ffffff;
+      position: absolute;
+      rotate: 45deg;
+      padding: 0.2rem 9rem;
+      top: 14rem;
+      left: 15rem;
+      @include mediaQuery{
+        left: 8rem;
+        top: 10rem;
+        width: 40rem;
+      }
+    }
   }
 }
 
