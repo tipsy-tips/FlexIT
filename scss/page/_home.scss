@@ -310,16 +310,15 @@
       color: $clr-light;
     }
   }
-  &__bottom {
-    @include for-size(desktop) {
-      @include flex(space-between, center);
+  &__bottom{
+    @include flex (space-between, center);
+    @include for-size(desktop){
+      @include flex (space-between, center);
     }
   }
-  &__imgname {
-    p {
-      @include for-size(desktop) {
-        text-align: center;
-      }
+  &__imgname{
+    p{
+      text-align: center;
       color: $clr-primary;
     }
   }
