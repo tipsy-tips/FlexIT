@@ -299,6 +299,7 @@
     }
   }
   &__bottom{
+    @include flex (space-between, center);
     @include mediaQuery{
       @include flex (space-between, center);
     }
@@ -306,6 +307,7 @@
   }
   &__imgname{
     p{
+      text-align: center;
       @include mediaQuery{
         text-align: center;
       }

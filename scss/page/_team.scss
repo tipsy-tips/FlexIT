@@ -65,9 +65,9 @@
             @include grid(2);
             grid-column-gap:3rem;
             
-            @include for-size(phone){
-                @include grid (1);
-            }
+            // @include for-size(phone){
+            //     @include grid (1);
+            // }
         }
     }
     .skills {
