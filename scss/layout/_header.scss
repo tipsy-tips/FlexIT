@@ -10,20 +10,28 @@
   z-index: 1030;
   border-bottom: 1px solid transparent;
 
-  @include mediaQuery {
+  @include for-size(desktop) {
     background-color: transparent;
     &.sticky {
       background-color: $clr-primary;
     }
+
+    &.sticky .header__wrapper nav .nav-links .dropdown-parent label {
+      color: $clr-light;
+      &::before {
+        background-color: $clr-light;
+      }
+    }
   }
 
   &__wrapper {
-    @include mediaQuery {
-      padding: unset;
-    }
     padding: 2rem 0rem;
     display: flex;
     justify-content: space-between;
+
+    @include for-size(desktop) {
+      padding: unset;
+    }
 
     .logo {
       display: flex;
@@ -34,16 +42,6 @@
     }
 
     nav {
-      @include mediaQuery {
-        position: unset;
-        top: unset;
-        left: unset;
-        z-index: unset;
-        height: unset;
-        width: unset;
-        background-color: transparent;
-      }
-
       position: absolute;
       top: 75px;
       left: -100%;
@@ -58,79 +56,122 @@
         width: 75%;
       }
 
+      @include for-size(desktop) {
+        position: unset;
+        top: unset;
+        left: unset;
+        z-index: unset;
+        height: unset;
+        width: unset;
+        background-color: transparent;
+      }
+
       .nav-links {
-        @include mediaQuery {
-          padding-top: unset;
-          display: flex;
-          gap: 2.5rem;
-        }
         color: $clr-light;
         padding-top: 5rem;
         margin-left: 1rem;
-        li {
-          padding-left: 1rem;
-          cursor: pointer;
-        }
-        a {
-          color: $clr-light;
-        }
-        input {
-          display: none;
-        }
-        // INACTIVE SUBMENU - Mobile
-        .submenu {
-          // INACTIVE SUBMENU - Desktop
-          @include mediaQuery {
-            position: absolute;
-            top: 200px;
-            background-color: $clr-primary;
-            opacity: 0;
-            transition: all 0.5s ease-out;
-            li {
-              padding: 1rem;
-            }
-          }
-          width: 250px;
-          max-height: 0;
-          transition: max-height 0.5s ease-out;
-          overflow: hidden;
+
+        @include for-size(desktop) {
+          padding-top: unset;
+          display: flex;
+          gap: 2.5rem;
         }
 
         // OPEN SUBMENU - MOBILE
         input:checked ~ label .submenu {
           max-height: 100px;
-          transition: max-height, 0.5s ease-in;
+          transition: max-height, 0.2s ease-in;
         }
 
         // OPEN SUBMENU - Desktop
-        @include mediaQuery {
+        @include for-size(desktop) {
           label:hover .submenu {
             top: 90px;
             max-height: 500px;
             opacity: 1;
-            transition: all 0.5s ease-in;
+            transition: all 0.2s ease-in;
           }
         }
 
         label {
-          @include mediaQuery {
+          padding: 2.5rem 2.5rem 2.5rem 0rem;
+          display: block;
+          position: relative;
+          cursor: pointer;
+          @include for-size(desktop) {
             height: 100px;
             padding: unset;
             display: flex;
             gap: 5px;
             align-items: center;
+            ul {
+              li {
+                a {
+                  &::before {
+                    width: 6px;
+                    display: inline-block;
+                    aspect-ratio: 1/1;
+                    background-color: $clr-light;
+                    scale: 0;
+                    border-radius: 50%;
+                    transition: all 0.2s ease;
+                  }
+                }
+                &:hover {
+                  a::before {
+                    background-color: $clr-light;
+                    scale: 1;
+                  }
+                }
+              }
+            }
           }
-          padding: 2.5rem 2.5rem 2.5rem 0rem;
-          display: block;
-          position: relative;
-          cursor: pointer;
+
+          .submenu {
+            @include for-size(desktop) {
+              position: absolute;
+              top: 200px;
+              background-color: $clr-primary;
+              opacity: 0;
+              transition: all 0.5s ease-out;
+              li {
+                padding: 1rem;
+                :hover ~ a {
+                  &::before {
+                    scale: 1;
+                  }
+                }
+
+                a {
+                  margin-left: 1rem;
+                  position: relative;
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    width: 6px;
+                    aspect-ratio: 1/1;
+                    top: 8px;
+                    left: -10px;
+                    background-color: $clr-light;
+                    scale: 0;
+                    border-radius: 50%;
+                    transition: all 0.2s ease;
+                  }
+                }
+              }
+            }
+            width: 250px;
+            max-height: 0;
+            transition: max-height 0.5s ease-out;
+            overflow: hidden;
+          }
 
           i {
             font-size: 1.4rem;
           }
 
           &::before {
-            @include mediaQuery {
+            @include for-size(desktop) {
               top: 47px;
             }
             content: "";
@@ -144,7 +185,6 @@
             border-radius: 50%;
             transition: all 0.2s ease;
           }
-
           &.active {
             color: $clr-primary;
             &::before {
@@ -164,6 +204,16 @@
 
         .dropdown-parent {
           position: relative;
+          input {
+            display: none;
+          }
+          li {
+            padding-left: 1rem;
+            cursor: pointer;
+          }
+          a {
+            color: $clr-light;
+          }
           .nav-links-dropdown {
             position: relative;
             left: 0px;
@@ -282,7 +332,7 @@
     align-items: center;
     gap: 2rem;
     .burger__menu {
-      @include mediaQuery {
+      @include for-size(desktop) {
         display: none;
       }
       cursor: pointer;

@@ -41,6 +41,10 @@
   min-height: 100vh;
   position: relative;
   z-index: 0;
+  padding: 3rem 0rem;
+  @include for-size(desktop) {
+    padding: 7rem 0rem;
+  }
   .particles-js {
     position: absolute;
     width: 100%;
@@ -67,17 +71,17 @@
     z-index: -1;
     display: block;
     transition: all 0.5s ease-in-out 0s;
-    @include mediaQuery {
+    @include for-size(desktop) {
       height: 100%;
     }
+
+    // @include for-size(desktop){
+    //   height: 100%;
+    // }
   }
-  @include mediaQuery {
-    padding: 7rem 0rem;
-  }
-  padding: 3rem 0rem;
   &__wrapper {
     padding: 10rem 0rem;
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include grid(2);
     }
     .banner__paragraph {
@@ -220,7 +224,7 @@
   padding-top: 8rem;
   padding-bottom: 8rem;
   &__wrapper {
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include grid(2);
       grid-column-gap: 10rem;
     }
@@ -228,7 +232,7 @@
     grid-column-gap: 10rem;
   }
   &__image {
-    @include mediaQuery {
+    @include for-size(desktop) {
       margin: auto;
       order: 1;
     }
@@ -245,7 +249,7 @@
     }
   }
   &__details {
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include grid(2);
       grid-column-gap: 5rem;
     }
@@ -253,7 +257,7 @@
     grid-column-gap: 5rem;
   }
   &__info {
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include flex;
       gap: 2rem;
     }
@@ -271,21 +275,24 @@
     transition: background-color 0.3s, transform 0.3s;
 
     i {
-        color:#09aff4; 
-        font-size: 3rem; 
+      color: #09aff4;
+      font-size: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        &__icons:hover & {
-            color:#fff;
-        }
+      &__icons:hover & {
+        color: #fff;
+      }
     }
 
     &:hover {
-        background-color:#09aff4; 
-        transform: translateY(-5px); 
+      background-color: #09aff4;
+      transform: translateY(-5px);
 
-        i {
-            color: #fff; 
-        }
+      i {
+        color: #fff;
+      }
     }
   }
   &__content {
@@ -297,38 +304,36 @@
     }
   }
   &__bottom {
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include flex(space-between, center);
     }
   }
   &__imgname {
     p {
-      @include mediaQuery {
+      @include for-size(desktop) {
         text-align: center;
       }
       color: $clr-primary;
     }
   }
-  &__btn{
-      button{
-        letter-spacing: 0.1rem;
-        font-weight: 600;
-        font-size: 17.6px;
-        padding: 8px 20px ;
-        border: 2px solid $clr-primary;
-        border-top-right-radius: 1.5rem;
-        border-top-left-radius: 0.5rem;
-        border-bottom-left-radius: 1.5rem;
-        border-bottom-right-radius: 0.5rem;
-        color: #fff;
-        background-color: $clr-primary;
-        
-      }
-      button:hover {
-        background: $clr-secondary;
-        color: $clr-primary;
-        border: 2px solid $clr-primary;
-              
+  &__btn {
+    button {
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+      font-size: 17.6px;
+      padding: 8px 20px;
+      border: 2px solid $clr-primary;
+      border-top-right-radius: 1.5rem;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 0.5rem;
+      color: #fff;
+      background-color: $clr-primary;
+    }
+    button:hover {
+      background: $clr-secondary;
+      color: $clr-primary;
+      border: 2px solid $clr-primary;
     }
   }
 }
@@ -339,7 +344,7 @@
   padding-top: 8rem;
   padding-bottom: 8rem;
   &__wrapper {
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include grid(2);
       grid-column-gap: 10rem;
     }
@@ -354,12 +359,12 @@
       font-size: clamp(32px, 6vw, 48px);
       color: $clr-light;
     }
-    p{
+    p {
       color: $clr-light;
     }
   }
   &__info {
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include flex;
     }
 
@@ -369,7 +374,6 @@
     font-size: clamp(5rem, 6vw, 5rem);
     font-weight: 700;
     color: #09aff4;
-  
   }
   &__content {
     margin-top: 2rem;
@@ -379,27 +383,24 @@
       color: $clr-light;
     }
   }
-  &__btn{
-      button{
-        letter-spacing: 0.1rem;
-        font-weight: 600;
-        font-size: 17.6px;
-        padding: 8px 20px ;
-        border: 2px solid $clr-primary;
-        border-top-right-radius: 1.5rem;
-        border-top-left-radius: 0.5rem;
-        border-bottom-left-radius: 1.5rem;
-        border-bottom-right-radius: 0.5rem;
-        color: #fff;
-        background-color: $clr-primary;
-       
-         
-      }
-      button:hover {
-        background: $clr-secondary;
-        color: $clr-primary;
-        border: 2px solid $clr-primary;
-               
+  &__btn {
+    button {
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+      font-size: 17.6px;
+      padding: 8px 20px;
+      border: 2px solid $clr-primary;
+      border-top-right-radius: 1.5rem;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 0.5rem;
+      color: #fff;
+      background-color: $clr-primary;
+    }
+    button:hover {
+      background: $clr-secondary;
+      color: $clr-primary;
+      border: 2px solid $clr-primary;
     }
   }
 }
@@ -421,26 +422,28 @@
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 0;
     display: block;
     transition: all 0.5s ease-in-out 0s;
-    height: 970px;
-    @include mediaQuery {
+    @include for-size(desktop) {
       height: auto;
     }
   }
 
   &__content {
     @include flex(space-between, center);
+    @include for-size(tablet) {
+      @include grid(2);
+    }
+    @include for-size(desktop) {
+      @include grid(4);
+    }
     width: 100%;
     height: 100%;
     padding: 50px;
     flex-wrap: wrap;
   }
   &__box {
-    @include mediaQuery {
-      width: calc(25% - 30px);
-    }
     width: 100%;
     margin-bottom: 2rem;
     border: 1px solid$clr-primary;
@@ -458,11 +461,11 @@
     .counter {
       font-size: 50px;
       font-weight: 600;
-      color:#fff;
+      color: #fff;
     }
     p {
       font-size: 25px;
-      color:#fff;
+      color: #fff;
     }
   }
 }
@@ -472,7 +475,7 @@
   background-color: $clr-primary;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  @include mediaQuery {
+  @include for-size(desktop) {
     padding: 8rem;
   }
 
@@ -505,7 +508,7 @@
   background-color: $clr-secondary;
   padding: 4rem 0;
   &__title {
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include flex(space-between, center);
       margin: 5rem 0;
     }
@@ -524,7 +527,7 @@
       font-size: 16px;
       padding-bottom: 2rem;
       max-width: 30rem;
-      @include mediaQuery {
+      @include for-size(desktop) {
         max-width: 40rem;
       }
     }
@@ -572,8 +575,12 @@
   }
 
   &__cardlist {
-    @include mediaQuery {
-      @include grid(3);
+    @include for-size(desktop) {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 2rem;
+    }
+    @include for-size(tablet) {
+      @include grid(2);
       gap: 2rem;
     }
   }
@@ -620,7 +627,7 @@
       z-index: -3;
       transition: transform 0.5s ease 0s;
     }
-    @include mediaQuery {
+    @include for-size(desktop) {
       margin-top: 0;
     }
     h3 {
@@ -648,7 +655,7 @@
   background-color: $clr-secondary;
   padding: 5rem 0;
   &__title {
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include flex(space-between, center);
     }
   }
@@ -700,13 +707,44 @@
       flex-wrap: wrap;
       gap: 2rem;
       li {
+        cursor: pointer;
         a {
+          position: relative;
           font-size: 20px;
           text-align: center;
           color: $clr-light;
+          &.active {
+            color: $clr-primary;
+            &::before {
+              background-color: $clr-primary;
+              scale: 1;
+            }
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            width: 6px;
+            left: -10px;
+            top: 10px;
+            scale: 0;
+            aspect-ratio: 1/1;
+            background-color: $clr-primary;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+          }
+          &:hover {
+            color: $clr-primary;
+          }
+        }
+
+        &:hover {
+          a::before {
+            background-color: $clr-primary;
+            scale: 1;
+          }
         }
       }
-      @include mediaQuery {
+      @include for-size(desktop) {
         justify-content: start;
         padding: 0;
       }
@@ -714,26 +752,34 @@
   }
 
   &__cardlist {
-    @include mediaQuery {
+    @include grid(1);
+    @include for-size(tablet) {
+      @include grid(2);
+    }
+    @include for-size(desktop) {
       @include grid(3);
     }
   }
   &__cards {
-    width: 385px;
-    position: relative;
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      position: static;
+    }
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: absolute;
     overflow: clip;
     border-radius: 0.5rem;
     margin-bottom: 2rem;
-    @include mediaQuery {
+    @include for-size(desktop) {
       width: 426.66px;
     }
     img {
-      width: 385px;
-      height: 450px;
-      @include mediaQuery {
-        width: 426.66px;
-        height: 450px;
-      }
+      @include imgCover(450px, 100%);
     }
     &:hover {
       img {
@@ -741,16 +787,24 @@
         transition: all 0.5s ease;
       }
     }
+    &:hover .portfolio__arrow {
+      left: 0;
+    }
+    &:hover .portfolio__name {
+      bottom: 0;
+    }
   }
   &__arrow {
+    @include flex(flex-start, center);
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: -60px;
     background-color: $clr-primary;
-    z-index: 9;
+    z-index: 0;
     height: 6rem;
     width: 6rem;
     align-content: center;
+    transition-delay: 0.5s;
     i {
       padding: 2rem;
       color: $clr-light;
@@ -758,20 +812,22 @@
   }
 
   &__name {
+    @include flex(flex-start, center);
     position: absolute;
-    background-color: $clr-dark;
-    opacity: 50%;
-    bottom: 0;
+    background-color: rgba(#000, 0.5);
+    bottom: -60px;
     right: 0;
     width: 100%;
     height: 6rem;
     align-content: center;
+    z-index: 0;
     h4 {
       margin-bottom: 0;
-      color: $clr-light;
+      color: #fff;
       opacity: 100%;
       padding-left: 8rem;
       font-size: 20px;
+      z-index: 10;
     }
   }
 }
@@ -782,12 +838,12 @@
   padding: 5rem 0;
 
   &__title {
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include flex(space-between, center);
     }
   }
   &__cardlist {
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include flex(space-between, center);
       gap: 3rem;
     }
@@ -921,7 +977,7 @@
   background-color: $clr-secondary;
   padding: 5rem 0;
   &__title {
-    @include mediaQuery {
+    @include for-size(desktop) {
       @include flex(space-between, center);
     }
   }
@@ -939,7 +995,7 @@
       font-size: 16px;
       margin-bottom: 3rem;
       max-width: 44rem;
-      @include mediaQuery {
+      @include for-size(desktop) {
         margin-bottom: 5rem;
       }
     }
@@ -976,8 +1032,12 @@
   }
 
   &__cardlist {
-    @include mediaQuery {
-      @include flex(space-between, center);
+    @include grid(1);
+    @include for-size(tablet) {
+      @include grid(2);
+    }
+    @include for-size(desktop) {
+      @include grid(4);
     }
   }
 
@@ -1026,7 +1086,7 @@
       top: 8%;
       left: 40%;
       font-size: 64px;
-      @include mediaQuery {
+      @include for-size(desktop) {
         left: 37%;
       }
     }
@@ -1040,7 +1100,7 @@
       top: 8%;
       left: 40%;
       font-size: 64px;
-      @include mediaQuery {
+      @include for-size(desktop) {
         left: 37%;
       }
     }
@@ -1053,7 +1113,7 @@
       position: absolute;
       top: 29%;
       left: 31%;
-      @include mediaQuery {
+      @include for-size(desktop) {
         top: 27%;
         left: 25%;
       }
@@ -1066,7 +1126,7 @@
       position: absolute;
       top: 29%;
       left: 31%;
-      @include mediaQuery {
+      @include for-size(desktop) {
         top: 27%;
         left: 25%;
       }
@@ -1074,13 +1134,18 @@
   }
 
   &__cardbtn {
+    display: grid;
     justify-self: center;
     margin: 4rem 2rem;
     a {
+      display: inline-block;
+      text-align: center;
+      width: 70%;
       letter-spacing: 0.1rem;
       font-weight: bold;
       font-size: 17.6px;
-      padding: 8px 13rem;
+      padding: 15px;
+      margin: 0 auto;
       border: 2px solid $clr-primary;
       border-top-right-radius: 1.5rem;
       border-top-left-radius: 0.5rem;
@@ -1089,9 +1154,6 @@
       color: $clr-light;
       background-color: transparent;
       font-weight: 500;
-      @include mediaQuery {
-        padding: 8px 8rem;
-      }
       &:hover {
         background-color: $clr-primary;
         transition: all 0.5s ease;
@@ -1103,11 +1165,15 @@
     justify-self: center;
     margin: 4rem 2rem;
     a {
+      display: inline-block;
+      text-align: center;
+      width: 70%;
       letter-spacing: 0.1rem;
       font-weight: bold;
       font-size: 17.6px;
-      padding: 8px 13rem;
-      border: 2px solid $clr-light;
+      padding: 15px;
+      margin: 0 auto;
+      border: 2px solid #fff;
       border-top-right-radius: 1.5rem;
       border-top-left-radius: 0.5rem;
       border-bottom-left-radius: 1.5rem;
@@ -1115,10 +1181,6 @@
       color: $clr-light;
       background-color: transparent;
       font-weight: 500;
-      transition: all 0.5s ease;
-      @include mediaQuery {
-        padding: 8px 8rem;
-      }
       &:hover {
         color: $clr-primary;
         background-color: $clr-light;
@@ -1134,15 +1196,32 @@
 
 // TESTIMONIALS
 .test {
+  &__wrapper {
+    position: relative;
+  }
+  background-color: $clr-secondary;
   position: relative;
-  background-image: url(../../images/bg\ testimonials.jpg);
-  filter: opacity(100);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
   padding: 5rem 0;
   z-index: 1;
+  .overlay {
+    background-image: url(../../images/bg\ testimonials.jpg);
+    opacity: 0.25;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    display: block;
+    transition: all 0.5s ease-in-out 0s;
+    @include for-size(desktop) {
+      height: auto;
+    }
+  }
 
   &__title {
     text-align: center;
@@ -1161,6 +1240,7 @@
     cursor: grab;
     img {
       width: 72px;
+      height: 72px;
       display: block;
       margin-left: auto;
       margin-right: auto;
