@@ -469,6 +469,7 @@
   }
   &__slider{
     cursor:grabbing;
+    
     img{
       cursor:pointer;
       width: auto;
@@ -480,6 +481,7 @@
 
       &:hover{
         filter:grayscale(0%);
+        
       }
     }
 
