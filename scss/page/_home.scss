@@ -75,10 +75,6 @@
     @include for-size(desktop) {
       height: 100%;
     }
-
-    // @include for-size(desktop){
-    //   height: 100%;
-    // }
   }
   &__wrapper {
     padding: 10rem 0rem;
@@ -213,9 +209,6 @@
     .banner__img {
       @include flex(center, center);
       img {
-        @include for-size(tablet-landscape) {
-          display: none;
-        }
         max-width: 100%;
         height: auto;
       }
@@ -236,9 +229,6 @@
     grid-column-gap: 10rem;
   }
   &__image {
-    @include for-size(tablet-landscape) {
-      display: none;
-    }
     @include for-size(desktop) {
       margin: auto;
       order: 1;
@@ -310,14 +300,14 @@
       color: $clr-light;
     }
   }
-  &__bottom{
-    @include flex (space-between, center);
-    @include for-size(desktop){
-      @include flex (space-between, center);
+  &__bottom {
+    @include flex(space-between, center);
+    @include for-size(desktop) {
+      @include flex(space-between, center);
     }
   }
-  &__imgname{
-    p{
+  &__imgname {
+    p {
       text-align: center;
       color: $clr-primary;
     }
@@ -516,9 +506,8 @@
   padding: 4rem 0;
   &__title {
     @include for-size(desktop) {
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      justify-content: center;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
     }
   }
@@ -546,7 +535,6 @@
   }
 
   &__btn {
-    margin-bottom: 5rem;
     a {
       letter-spacing: 0.1rem;
       font-weight: bold;
@@ -668,7 +656,10 @@
   padding: 5rem 0;
   &__title {
     @include for-size(desktop) {
-      @include flex(space-between, center);
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      justify-content: center;
+      align-items: center;
     }
   }
   &__info {
@@ -681,7 +672,6 @@
     }
   }
   &__btn {
-    margin-bottom: 5rem;
     a {
       letter-spacing: 0.1rem;
       font-weight: bold;
