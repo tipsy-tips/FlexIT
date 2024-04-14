@@ -4,11 +4,40 @@
 @use "../components/" as *;
 @use "../vendor/" as *;
 
+
+// CONTACT BANNER
+.contactbanner{
+    background-image: url(../../images/pattern-bg-1.jpg), linear-gradient(rgba(8, 8, 8, 0.7),rgba(0,0,0,0.5));
+    background-position: center;
+    background-size: cover;
+    background-blend-mode:overlay;
+    height: 600px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+    h1{
+        color: #FFFFFF;
+        font-size: 56px;
+        margin-bottom: 0;
+    }
+    h6{
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: center;
+        span{
+            opacity: 70%;
+        }
+    }
+
+}
+
 // OFFICES
 .offices{
     background-color: $clr-secondary;
-    padding: 7rem 0;
+    padding-top: 80px;
     &__wrapper{
+        padding-top: 80px;
         h1{
             color: $clr-light;
             font-size: 40px;
@@ -23,10 +52,18 @@
     }
 
     &__cardlist{
-        @include mediaQuery{
+
+        @include for-size(tablet){
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        @include for-size(desktop){
             @include flex(space-between, center);
+            flex-direction: row;
             gap: 2.5rem;
         }
+
     }
 
     &__cards{
@@ -43,19 +80,31 @@
 
     &__cards{
         border-top: 5px solid $clr-primary;
-        border-left: 1px solid $clr-accent;
-        border-right: 1px solid $clr-accent;
-        border-bottom: 1px solid $clr-accent;
+        border-left: 1px solid rgba(#09aff4, 0.35);
+        border-right: 1px solid rgba(#09aff4, 0.35);
+        border-bottom: 1px solid rgba(#09aff4, 0.35);
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
-        padding: 3rem 2rem;
+        padding: 32px 0 8px 16px;
         margin-bottom: 3rem;
         h3{
             font-size: 24px;
+            position: relative;
+            margin-bottom: 5rem;
+        }
+        h3::after{
+            position: absolute;
+            display: inline-block;
+            content: " ";
+            width: 64px;
+            height: 2px;
+            left: 0;
+            top: 4.5rem;
+            background-color: $clr-primary;
         }
         p{
             font-size: 20px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
 
         }
     }
@@ -67,14 +116,14 @@
             margin-bottom: auto;
             font-size: 20px;
             color: $clr-primary;
-            background-color: $clr-accent;
+            background-color: #09AFF426;
             padding: 1.5rem;
             border-radius: 0.5rem;
-            &:hover{
-                background-color: $clr-primary;
-                color: $clr-light;
-                transition: all 0.5s ease;
-            }
+        }
+        &:hover i{
+            background-color: $clr-primary;
+            color: #FFFFFF;
+            transition: all 0.5s ease;
         }
     }
     &__info{
@@ -84,6 +133,7 @@
             opacity: 80%;
             margin-bottom: 0;
             margin-top: 2.5rem;
+            line-height: 2.35rem;
         }
         p{
             a{
@@ -102,7 +152,7 @@
 // MAP
 .map{
     background-color: $clr-secondary;
-    padding-bottom: 7rem;
+    padding-top: 80px;
     &__wrapper{
         h1{
             color: $clr-light;
@@ -111,7 +161,7 @@
             font-weight: 500;
             padding-bottom: 7rem;
             margin-bottom: 0;
-            @include mediaQuery{
+            @include for-size(desktop){
                 font-size: 48px;
                 padding-top: 5rem;
             }
@@ -126,7 +176,7 @@
 // QUESTIONS
 .questions{
     background-color: $clr-secondary;
-
+    padding-top: 80px;
     &__wrapper{
         h1{
             color: $clr-light;
@@ -135,7 +185,7 @@
             font-weight: 500;
             padding-bottom: 7rem;
             margin-bottom: 0;
-            @include mediaQuery{
+            @include for-size(desktop){
                 font-size: 48px;
                 padding-top: 5rem;
                 
@@ -144,9 +194,10 @@
 
         form{
             p{
-                margin-bottom: 0;
-                color: $clr-light;
+                margin-bottom: 0.5rem;
+                color: $clr-primary;
                 font-size: 16px;
+                font-weight: 500;
                 span{
                     color: red;
                 }
@@ -157,6 +208,9 @@
                 width: 100%;
                 height: 50px;
                 margin-bottom: 2rem;
+                padding: 5px;
+                color: $clr-light;
+                font-weight: 500;
             }
             textarea{
                 background-color: transparent;
@@ -164,13 +218,17 @@
                 width: 100%;
                 height: 160px;
                 margin-bottom: 5rem;
+                color: $clr-light;
+                padding: 5px;
+                font-family: "Main";
+                font-weight: 500;
             }
         }
     }
 
     &__personal{
-        @include mediaQuery{
-            @include flex;
+        @include for-size(desktop){
+            @include grid(2);
             gap: 2rem;
         }
     }
@@ -187,7 +245,7 @@
             border-top-left-radius: 0.5rem;
             border-bottom-left-radius: 1.5rem;
             border-bottom-right-radius: 0.5rem;
-            color: $clr-light;
+            color: #FFFFFF;
             background-color: $clr-primary;
             font-weight: 500;
             i{
@@ -197,6 +255,7 @@
               border: 2px solid $clr-primary;
               background-color: transparent;
               transition: all 0.5s ease;
+              color: $clr-primary;
               i{
                 transform: translateX(30%);
                 transition: all 0.5s ease;

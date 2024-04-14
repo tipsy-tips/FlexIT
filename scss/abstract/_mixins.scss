@@ -1,4 +1,5 @@
 @use "colors" as *;
+
 @mixin imgCover($ht: 1px, $wd: 100%) {
   height: $ht;
   width: $wd;
