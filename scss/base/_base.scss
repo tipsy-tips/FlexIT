@@ -83,7 +83,13 @@ p {
 }
 
 .container {
+  @include for-size(tablet) {
+    padding: 0 5rem;
+  }
+  @include for-size(desktop) {
+    padding: 0 7rem;
+  }
   max-width: 136rem;
-  padding: 0 6rem;
+  padding: 0 2rem;
   margin: 0 auto;
 }
