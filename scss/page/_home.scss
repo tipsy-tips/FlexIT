@@ -312,7 +312,9 @@
     }
   }
   &__bottom {
-    @include flex(space-between, center);
+    @include flex(space-between, flex-start);
+    gap: 3rem;
+    flex-direction: column;
     @include for-size(desktop) {
       @include flex(space-between, center);
     }
@@ -519,6 +521,7 @@
   background-color: $clr-secondary;
   padding: 4rem 0;
   &__title {
+    margin-bottom: 5rem;
     @include for-size(desktop) {
       display: flex;
       justify-content: space-between;
@@ -672,6 +675,7 @@
   background-color: $clr-secondary;
   padding: 5rem 0;
   &__title {
+    margin-bottom: 5rem;
     @include for-size(desktop) {
       display: flex;
       justify-content: space-between;
@@ -866,6 +870,7 @@
   padding: 5rem 0;
 
   &__title {
+    margin-bottom: 5rem;
     @include for-size(desktop) {
       display: flex;
       justify-content: space-between;
@@ -1024,6 +1029,7 @@
   background-color: $clr-secondary;
   padding: 5rem 0;
   &__title {
+    margin-bottom: 5rem;
     @include for-size(desktop) {
       display: flex;
       justify-content: space-between;
